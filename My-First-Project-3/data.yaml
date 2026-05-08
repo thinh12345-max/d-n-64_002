@@ -1,0 +1,15 @@
+names:
+- bus
+- car
+- motorcycle
+- truck
+nc: 4
+roboflow:
+  license: CC BY 4.0
+  project: my-first-project-tbmkk
+  url: https://universe.roboflow.com/trn-lerua/my-first-project-tbmkk/dataset/3
+  version: 3
+  workspace: trn-lerua
+test: ../test/images
+train: ../train/images
+val: ../valid/images
