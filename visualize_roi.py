@@ -22,7 +22,7 @@ if ret:
     # In tọa độ các điểm
     for i, pt in enumerate(ROI):
         cv2.circle(frame, pt, 5, (0, 255, 0), -1)
-        cv2.putText(frame, f"P{i}{pt}", pt[0]-30, pt[1]-20, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+        cv2.putText(frame, f"P{i}{pt}", pt[0]-30, pt[1]-20, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1) # type: ignore
     
     cv2.imshow("ROI Visualization", frame)
     print("ROI coordinates:", ROI)
