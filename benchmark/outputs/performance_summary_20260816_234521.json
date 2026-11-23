@@ -1,0 +1,292 @@
+{
+  "benchmark_info": {
+    "phase": "1.2",
+    "timestamp": "2026-08-16T23:45:21.792910",
+    "video": "public\\3.mp4",
+    "model": "runs\\detect\\train-16\\weights\\best.pt",
+    "device": "cpu",
+    "imgsz": 640,
+    "confidence": 0.3,
+    "iou": 0.5,
+    "tracker": "bytetrack",
+    "warmup_frames": 30,
+    "benchmark_frames": 500,
+    "num_runs": 3,
+    "input_fps": 15.0
+  },
+  "system_info": {
+    "os": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.11",
+    "cpu": "Intel64 Family 6 Model 151 Stepping 5, GenuineIntel",
+    "cpu_cores": 12,
+    "ram_gb": 16.9,
+    "pytorch": "2.13.0+cpu",
+    "cuda_available": false,
+    "gpu": null
+  },
+  "runs": [
+    {
+      "run_id": 1,
+      "timestamp": "2026-08-16T23:42:44.510184",
+      "frames_processed": 500,
+      "benchmark_duration_sec": 75.01,
+      "input_fps": 15.0,
+      "processing_fps": 6.67,
+      "stages": {
+        "frame_acquisition": {
+          "mean_ms": 1.39,
+          "median_ms": 1.37,
+          "p95_ms": 1.79,
+          "min_ms": 0.99,
+          "max_ms": 5.61,
+          "sample_count": 500
+        },
+        "yolo_inference": {
+          "mean_ms": 116.72,
+          "median_ms": 108.8,
+          "p95_ms": 180.8,
+          "min_ms": 98.84,
+          "max_ms": 211.8,
+          "sample_count": 500
+        },
+        "bytetrack": {
+          "mean_ms": 29.18,
+          "median_ms": 27.2,
+          "p95_ms": 45.2,
+          "min_ms": 24.71,
+          "max_ms": 52.95,
+          "sample_count": 500
+        },
+        "entity_association": {
+          "mean_ms": 0.09,
+          "median_ms": 0.09,
+          "p95_ms": 0.13,
+          "min_ms": 0.06,
+          "max_ms": 0.42,
+          "sample_count": 500
+        },
+        "roi_counting": {
+          "mean_ms": 0.01,
+          "median_ms": 0.01,
+          "p95_ms": 0.02,
+          "min_ms": 0.0,
+          "max_ms": 0.05,
+          "sample_count": 500
+        },
+        "visualization_output": {
+          "mean_ms": 0.25,
+          "median_ms": 0.23,
+          "p95_ms": 0.33,
+          "min_ms": 0.16,
+          "max_ms": 6.11,
+          "sample_count": 500
+        }
+      },
+      "total_latency": {
+        "mean_ms": 147.74,
+        "median_ms": 137.86,
+        "p95_ms": 227.79,
+        "min_ms": 124.98,
+        "max_ms": 266.57,
+        "sample_count": 500
+      },
+      "resources": {
+        "cpu_avg_percent": 752.21,
+        "cpu_max_percent": 1120.9,
+        "ram_avg_mb": 551.61,
+        "ram_max_mb": 564.28,
+        "sample_count": 1360
+      },
+      "device": "cpu",
+      "config": {
+        "model_path": "runs\\detect\\train-16\\weights\\best.pt",
+        "imgsz": 640,
+        "confidence": 0.3,
+        "iou": 0.5,
+        "tracker": "bytetrack",
+        "frame_size": [
+          1020,
+          500
+        ],
+        "roi_enabled": true
+      }
+    },
+    {
+      "run_id": 2,
+      "timestamp": "2026-08-16T23:44:02.859666",
+      "frames_processed": 500,
+      "benchmark_duration_sec": 73.93,
+      "input_fps": 15.0,
+      "processing_fps": 6.76,
+      "stages": {
+        "frame_acquisition": {
+          "mean_ms": 1.41,
+          "median_ms": 1.41,
+          "p95_ms": 1.69,
+          "min_ms": 1.01,
+          "max_ms": 2.35,
+          "sample_count": 500
+        },
+        "yolo_inference": {
+          "mean_ms": 114.98,
+          "median_ms": 112.13,
+          "p95_ms": 126.91,
+          "min_ms": 100.05,
+          "max_ms": 210.71,
+          "sample_count": 500
+        },
+        "bytetrack": {
+          "mean_ms": 28.74,
+          "median_ms": 28.03,
+          "p95_ms": 31.73,
+          "min_ms": 25.01,
+          "max_ms": 52.68,
+          "sample_count": 500
+        },
+        "entity_association": {
+          "mean_ms": 0.1,
+          "median_ms": 0.09,
+          "p95_ms": 0.13,
+          "min_ms": 0.06,
+          "max_ms": 6.2,
+          "sample_count": 500
+        },
+        "roi_counting": {
+          "mean_ms": 0.01,
+          "median_ms": 0.01,
+          "p95_ms": 0.01,
+          "min_ms": 0.0,
+          "max_ms": 0.08,
+          "sample_count": 500
+        },
+        "visualization_output": {
+          "mean_ms": 0.25,
+          "median_ms": 0.24,
+          "p95_ms": 0.33,
+          "min_ms": 0.16,
+          "max_ms": 3.79,
+          "sample_count": 500
+        }
+      },
+      "total_latency": {
+        "mean_ms": 145.58,
+        "median_ms": 142.01,
+        "p95_ms": 160.4,
+        "min_ms": 126.48,
+        "max_ms": 265.22,
+        "sample_count": 500
+      },
+      "resources": {
+        "cpu_avg_percent": 786.22,
+        "cpu_max_percent": 1130.3,
+        "ram_avg_mb": 553.39,
+        "ram_max_mb": 566.36,
+        "sample_count": 1359
+      },
+      "device": "cpu",
+      "config": {
+        "model_path": "runs\\detect\\train-16\\weights\\best.pt",
+        "imgsz": 640,
+        "confidence": 0.3,
+        "iou": 0.5,
+        "tracker": "bytetrack",
+        "frame_size": [
+          1020,
+          500
+        ],
+        "roi_enabled": true
+      }
+    },
+    {
+      "run_id": 3,
+      "timestamp": "2026-08-16T23:45:21.789894",
+      "frames_processed": 500,
+      "benchmark_duration_sec": 74.4,
+      "input_fps": 15.0,
+      "processing_fps": 6.72,
+      "stages": {
+        "frame_acquisition": {
+          "mean_ms": 1.41,
+          "median_ms": 1.39,
+          "p95_ms": 1.74,
+          "min_ms": 0.97,
+          "max_ms": 6.26,
+          "sample_count": 500
+        },
+        "yolo_inference": {
+          "mean_ms": 115.8,
+          "median_ms": 111.82,
+          "p95_ms": 140.81,
+          "min_ms": 98.53,
+          "max_ms": 230.41,
+          "sample_count": 500
+        },
+        "bytetrack": {
+          "mean_ms": 28.95,
+          "median_ms": 27.96,
+          "p95_ms": 35.2,
+          "min_ms": 24.63,
+          "max_ms": 57.6,
+          "sample_count": 500
+        },
+        "entity_association": {
+          "mean_ms": 0.09,
+          "median_ms": 0.09,
+          "p95_ms": 0.13,
+          "min_ms": 0.06,
+          "max_ms": 0.47,
+          "sample_count": 500
+        },
+        "roi_counting": {
+          "mean_ms": 0.01,
+          "median_ms": 0.01,
+          "p95_ms": 0.01,
+          "min_ms": 0.0,
+          "max_ms": 0.03,
+          "sample_count": 500
+        },
+        "visualization_output": {
+          "mean_ms": 0.25,
+          "median_ms": 0.24,
+          "p95_ms": 0.35,
+          "min_ms": 0.16,
+          "max_ms": 5.68,
+          "sample_count": 500
+        }
+      },
+      "total_latency": {
+        "mean_ms": 146.6,
+        "median_ms": 141.62,
+        "p95_ms": 177.82,
+        "min_ms": 124.61,
+        "max_ms": 289.6,
+        "sample_count": 500
+      },
+      "resources": {
+        "cpu_avg_percent": 781.47,
+        "cpu_max_percent": 1130.3,
+        "ram_avg_mb": 554.71,
+        "ram_max_mb": 567.05,
+        "sample_count": 1391
+      },
+      "device": "cpu",
+      "config": {
+        "model_path": "runs\\detect\\train-16\\weights\\best.pt",
+        "imgsz": 640,
+        "confidence": 0.3,
+        "iou": 0.5,
+        "tracker": "bytetrack",
+        "frame_size": [
+          1020,
+          500
+        ],
+        "roi_enabled": true
+      }
+    }
+  ],
+  "averages": {
+    "processing_fps": 6.72,
+    "total_mean_latency_ms": 146.64,
+    "real_time_capable": false
+  }
+}

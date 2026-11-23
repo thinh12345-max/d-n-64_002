@@ -1,0 +1,23 @@
+{
+  "analysis_id": "d03-baseline-10-error-analysis-visual-01",
+  "checkpoint": "E:/duan64/duan64_2\\runs/detect/runs/detect/d03-baseline-10/weights/best.pt",
+  "checkpoint_sha256": "47c2edb8fb91c42f7a1755c00b059daf44947b85f1fc53659c3431bd3b71a024",
+  "imgsz": 640,
+  "conf": 0.001,
+  "nms_iou": 0.7,
+  "device": "cpu",
+  "eval_iou": 0.5,
+  "max_det": 300,
+  "valid_images": 6,
+  "test_images": 6,
+  "total_images": 12,
+  "total_predictions": 3600,
+  "total_ground_truth_objects": 963,
+  "software": {
+    "python": "3.10.11",
+    "ultralytics": "8.4.118",
+    "torch": "2.13.0+cpu",
+    "platform": "win32"
+  },
+  "timestamp_utc": "2026-09-05T03:28:16.372434+00:00"
+}

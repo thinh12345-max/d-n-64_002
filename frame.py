@@ -4,7 +4,7 @@ from ultralytics import YOLO
 
 model = YOLO("yolov8n.pt")
 
-video_path = "public/4.mp4"
+video_path = "public/2.mp4"
 output_folder = "frames_filtered"
 
 os.makedirs(output_folder, exist_ok=True)

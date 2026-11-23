@@ -1,0 +1,237 @@
+{
+  "analysis_id": "D-03-VISUAL-ERROR-ANALYSIS",
+  "report_purpose": "Scientific report structure for the completed D-03 baseline evaluation and visual error analysis.",
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Research objective",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (integration_scope)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/final_integrity_validation.json (research_report_readiness)"
+      ],
+      "reportable_facts": [
+        "The D-03 study covers a completed baseline evaluation and a targeted visual error analysis.",
+        "The evidence scope integrates three layers: full-dataset numerical baseline (LEVEL A), 12-image machine matching evidence (LEVEL B), and 12-case visual inspection evidence (LEVEL C).",
+        "The artifact is an evidence integration layer, not a final discussion; it introduces no new evidence, causal claims, recommendations, or hypotheses."
+      ],
+      "prohibited_claims": [
+        "No claim that the visual findings are representative of the entire dataset.",
+        "No claim of statistical representativeness of the 12 inspected cases.",
+        "No causal claim about the origin of any observed error.",
+        "No claim about person-class performance."
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Experimental setup",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (machine_error_evidence, evidence_level_boundary)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/final_integrity_validation.json (machine_evidence_status)"
+      ],
+      "reportable_facts": [
+        "Matching uses a fixed IoU threshold of 0.50 and is class-aware, greedy, confidence-ranked, one-to-one, with no NMS at evaluation time.",
+        "The 12 selected images yield TP 781, FP 2819, and FN 182 in aggregate.",
+        "Evidence is organized into three non-mergeable levels: full evaluation (A), targeted machine matching (B), and direct visual inspection (C)."
+      ],
+      "prohibited_claims": [
+        "No claim that duplicate detections reflect detector box quality; they are an artifact of the greedy one-to-one matching rule.",
+        "No claim that the 12-image matching aggregates represent the full evaluated subsets.",
+        "No claim that any evidence level can be substituted for another."
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Dataset and evaluation protocol",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (numerical_baseline, limitations)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/final_integrity_validation.json (case_coverage_status, protected_files_status)"
+      ],
+      "reportable_facts": [
+        "The full evaluated valid subset contains 43 images and the test subset contains 21 images.",
+        "Twelve visual cases (VC-01 through VC-12) were inspected, composed of 1 valid case (VC-09) and 11 test cases.",
+        "The person class has no ground truth in both the valid and test splits (status no_ground_truth).",
+        "No protected file (dataset, checkpoint, evaluation protocol, evaluator, or baseline outputs) was modified during this audit."
+      ],
+      "prohibited_claims": [
+        "No claim that the 12 visual cases are a statistically representative sample of the dataset.",
+        "No claim about person-class precision, recall, AP, false positives, or false negatives.",
+        "No claim that no_ground_truth indicates poor person-class performance.",
+        "No claim that the visual sample covers the full evaluated subsets."
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Baseline model and training configuration",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (numerical_baseline source role)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/final_integrity_validation.json (protected_files_status)"
+      ],
+      "training_configuration": "Not established by the currently selected source artifacts.",
+      "reportable_facts": [
+        "A full valid/test numerical baseline exists and is the authoritative Level A source for overall and per-class metrics.",
+        "The checkpoint, dataset, and evaluation protocol remained unchanged during this audit."
+      ],
+      "prohibited_claims": [
+        "No claim about model architecture, training hyperparameters, optimizer, schedule, or training procedure.",
+        "No claim that the baseline was retrained or that training was repeated."
+      ]
+    },
+    {
+      "section_number": 5,
+      "title": "Evaluation metrics",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/numerical_baseline_extract.json (valid_overall, test_overall, per_class)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (numerical_baseline)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/scientific_boundary.json (evidence_level_boundary)"
+      ],
+      "reportable_facts": [
+        "Metrics are computed on the full evaluated valid subset (43 images) and test subset (21 images).",
+        "Documented metrics include mAP@0.5, mAP@0.5:0.95, precision, recall, plus per-class AP@0.5 and AP@0.5:0.95, and TP/FP/FN totals.",
+        "Per-class breakdowns are recorded for bus, car, motorcycle, and truck; person has no ground truth in both splits (status no_ground_truth)."
+      ],
+      "prohibited_claims": [
+        "No new metrics, statistical tests, or confidence intervals may be introduced.",
+        "No claim about person-class precision, recall, AP, false positives, or false negatives.",
+        "No claim that no_ground_truth indicates poor person-class performance.",
+        "No claim that any metric value implies a causal mechanism."
+      ]
+    },
+    {
+      "section_number": 6,
+      "title": "Quantitative results",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/numerical_baseline_extract.json (valid_overall, test_overall, valid_per_class, test_per_class, valid_test_differences)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (numerical_baseline)"
+      ],
+      "reportable_facts": [
+        "Valid overall: mAP@0.5 0.680575, mAP@0.5:0.95 0.319892, precision 0.223023, recall 0.862152, 3337 GT objects, 12900 predictions, TP 2877, FP 10023, FN 460.",
+        "Test overall: mAP@0.5 0.676974, mAP@0.5:0.95 0.319613, precision 0.222698, recall 0.873055, 1607 GT objects, 6300 predictions, TP 1403, FP 4897, FN 204.",
+        "Per-class valid/test AP@0.5: bus 0.857143/0.8, car 0.895222/0.894281, motorcycle 0.846828/0.865591, truck 0.803681/0.825; person undefined in both splits.",
+        "Valid-minus-test differences: mAP@0.5 +0.003601, mAP@0.5:0.95 +0.000279, precision +0.000325, recall -0.010903."
+      ],
+      "prohibited_claims": [
+        "No additional statistics or derived metrics may be calculated.",
+        "No claim that any difference is statistically significant.",
+        "No claim that per-class results generalize beyond the evaluated subsets.",
+        "No interpretation of why values differ between splits."
+      ]
+    },
+    {
+      "section_number": 7,
+      "title": "Visual error analysis",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (visual_evidence, evidence_relationships, scientific_interpretation)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/scientific_boundary.json (allowed_conclusions, partially_supported_interpretations, unsupported_or_unestablished_conclusions)"
+      ],
+      "reportable_facts": [
+        "Twelve visual cases (VC-01 through VC-12) were inspected: 1 valid (VC-09) and 11 test.",
+        "Observed visual patterns include small objects (all 12 cases), background false positives (VC-01, VC-02, VC-03, VC-11, VC-12), localization difficulty (VC-02, VC-04, VC-05, VC-06), false negatives (VC-04, VC-05, VC-06), duplicate detections (VC-07, VC-08), low-confidence detections (VC-09, VC-10), and crowding (VC-12).",
+        "BORDERLINE_IOU_MATCH is the only category with SUPPORTED status (VC-01 at IoU 0.4718, VC-03 at IoU 0.4582); SMALL_OBJECT, FALSE_POSITIVE_BACKGROUND, FALSE_NEGATIVE, and LOCALIZATION_ERROR are PARTIALLY_SUPPORTED; DUPLICATE_DETECTION, LOW_CONFIDENCE, and CROWDING are NOT_DIRECTLY_SUPPORTED."
+      ],
+      "prohibited_claims": [
+        "No new visual observations may be added.",
+        "No claim that the 12 cases are statistically representative of the dataset.",
+        "No causal claim about the origin of any observed error pattern.",
+        "No claim that any visual pattern explains overall model behavior."
+      ]
+    },
+    {
+      "section_number": 8,
+      "title": "Valid vs test comparison",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/numerical_baseline_extract.json (valid_overall, test_overall, valid_test_differences)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (numerical_baseline.valid_test_differences, limitations)"
+      ],
+      "reportable_facts": [
+        "Valid and test aggregate performance are close: mAP@0.5 0.680575 vs 0.676974, mAP@0.5:0.95 0.319892 vs 0.319613, precision 0.223023 vs 0.222698, recall 0.862152 vs 0.873055.",
+        "Valid-minus-test differences are small in absolute terms for all four overall metrics.",
+        "Per-class AP differences are recorded for bus, car, motorcycle, and truck; no person difference is computed because person has no ground truth in both splits."
+      ],
+      "prohibited_claims": [
+        "No statistical significance test may be performed or claimed.",
+        "No claim of generalization failure or generalization success.",
+        "No claim that small valid/test differences confirm or refute generalization.",
+        "No causal inference about why the splits differ."
+      ]
+    },
+    {
+      "section_number": 9,
+      "title": "Scientific interpretation",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (scientific_interpretation)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/scientific_boundary.json (allowed_conclusions, partially_supported_interpretations, unsupported_or_unestablished_conclusions)"
+      ],
+      "reportable_facts": [
+        "Directly supported (Level A): recall is substantially higher than precision in both splits; false positives are numerous; false negatives occur across evaluated classes; valid and test aggregate performance are close; the AP@0.5 to AP@0.5:0.95 gap is substantial for every evaluated class.",
+        "Partially supported: the AP gap is partially consistent with localization weakness but localization is not established as the sole or primary weakness; low precision is partially consistent with many false positives but the mechanism is not established; residual FN counts are partially consistent with missed detections but inspected-case representativeness is not established.",
+        "Unestablished: it cannot be established that all false positives are duplicates, that low precision is caused by duplicates, that every localization error is caused by small objects, that the AP gap proves localization is the sole weakness, that low confidence causes false positives, or that crowding causes observed errors."
+      ],
+      "prohibited_claims": [
+        "No new causal explanation may be introduced.",
+        "No partially supported interpretation may be presented as a confirmed finding.",
+        "No claim that any observed pattern has a confirmed single cause.",
+        "No claim that visual findings represent the entire dataset."
+      ]
+    },
+    {
+      "section_number": 10,
+      "title": "Limitations",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (limitations)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/scientific_boundary.json (sample_scope_boundary, person_class_boundary, causal_language_boundary)"
+      ],
+      "reportable_facts": [
+        "Only 12 visual cases were inspected: 1 from valid (VC-09) and 11 from test, selected deterministically from matching.json evidence as an error-analysis sample, not a statistically representative random sample.",
+        "person has no ground truth in the evaluated valid/test subsets (status no_ground_truth in both splits); no person precision, recall, AP, false-positive, or false-negative conclusion may be inferred.",
+        "Visual evidence does not establish dataset-wide prevalence of any error category, and causal mechanisms cannot be established from the current evidence.",
+        "Matching is class-aware greedy confidence-ranked one-to-one with IoU at least 0.50 and no NMS at evaluation time; duplicate detections are an artifact of that matching rule, not a measured detector property."
+      ],
+      "prohibited_claims": [
+        "No additional limitations may be invented.",
+        "No claim that no_ground_truth indicates poor person-class performance.",
+        "No claim that the 12-case sample is representative of the dataset.",
+        "No claim that matching artifacts reflect detector box quality."
+      ]
+    },
+    {
+      "section_number": 11,
+      "title": "Conclusion",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/scientific_boundary.json (allowed_conclusions, unsupported_or_unestablished_conclusions)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json (scientific_interpretation)"
+      ],
+      "reportable_facts": [
+        "Allowed conclusions are limited to: recall substantially exceeds precision at the evaluated operating point in both splits; false positives are numerous; false negatives occur across evaluated classes; valid and test aggregate performance are close; the AP@0.5 to AP@0.5:0.95 gap is substantial for every evaluated class; some inspected cases show borderline IoU behavior relative to the 0.50 threshold; and the listed visual patterns were observed in the inspected cases.",
+        "No conclusion may assert a confirmed root cause for the model's errors.",
+        "No conclusion may assert statistical significance of the valid/test difference."
+      ],
+      "prohibited_claims": [
+        "Do not write the actual conclusion paragraph.",
+        "No recommendations or proposed experiments.",
+        "No claim of a confirmed root cause for observed errors.",
+        "No claim of statistical significance.",
+        "No claim that the visual sample represents the full dataset.",
+        "No generalization-failure or generalization-success claim."
+      ]
+    },
+    {
+      "section_number": 12,
+      "title": "Transition to the next research stage",
+      "evidence_sources": [
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/final_integrity_validation.json (research_report_readiness, validation_scope)",
+        "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/scientific_boundary.json (unsupported_or_unestablished_conclusions)"
+      ],
+      "reportable_facts": [
+        "The D-03 evidence chain is complete and the report readiness status is READY, with all 11 required artifacts present and valid.",
+        "No new experiment, methodology, or implementation detail is established by the currently selected source artifacts.",
+        "Specific next-stage action is not established by the currently selected source artifacts."
+      ],
+      "prohibited_claims": [
+        "No prescribed new experiment.",
+        "No unapproved methodology.",
+        "No invented future implementation details.",
+        "No causal or generalization claim about the next stage."
+      ]
+    }
+  ]
+}

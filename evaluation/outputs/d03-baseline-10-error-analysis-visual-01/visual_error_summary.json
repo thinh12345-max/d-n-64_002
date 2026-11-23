@@ -1,0 +1,203 @@
+{
+  "analysis_id": "d03-baseline-10-error-analysis-visual-01",
+  "source_visual_inspection_artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/visual_inspection.json",
+  "total_cases": 12,
+  "valid_case_count": 1,
+  "test_case_count": 11,
+  "case_ids": [
+    "VC-01",
+    "VC-02",
+    "VC-03",
+    "VC-04",
+    "VC-05",
+    "VC-06",
+    "VC-07",
+    "VC-08",
+    "VC-09",
+    "VC-10",
+    "VC-11",
+    "VC-12"
+  ],
+  "error_category_summary": {
+    "SMALL_OBJECT": {
+      "case_count": 12,
+      "case_ids": [
+        "VC-01",
+        "VC-02",
+        "VC-03",
+        "VC-04",
+        "VC-05",
+        "VC-06",
+        "VC-07",
+        "VC-08",
+        "VC-09",
+        "VC-10",
+        "VC-11",
+        "VC-12"
+      ]
+    },
+    "FALSE_POSITIVE_BACKGROUND": {
+      "case_count": 5,
+      "case_ids": [
+        "VC-01",
+        "VC-02",
+        "VC-03",
+        "VC-11",
+        "VC-12"
+      ]
+    },
+    "LOCALIZATION_ERROR": {
+      "case_count": 4,
+      "case_ids": [
+        "VC-02",
+        "VC-04",
+        "VC-05",
+        "VC-06"
+      ]
+    },
+    "FALSE_NEGATIVE": {
+      "case_count": 3,
+      "case_ids": [
+        "VC-04",
+        "VC-05",
+        "VC-06"
+      ]
+    },
+    "DUPLICATE_DETECTION": {
+      "case_count": 2,
+      "case_ids": [
+        "VC-07",
+        "VC-08"
+      ]
+    },
+    "BORDERLINE_IOU_MATCH": {
+      "case_count": 2,
+      "case_ids": [
+        "VC-01",
+        "VC-03"
+      ]
+    },
+    "LOW_CONFIDENCE": {
+      "case_count": 2,
+      "case_ids": [
+        "VC-09",
+        "VC-10"
+      ]
+    },
+    "CROWDING": {
+      "case_count": 1,
+      "case_ids": [
+        "VC-12"
+      ]
+    }
+  },
+  "class_summary": {
+    "bus": {
+      "case_count": 3,
+      "case_ids": [
+        "VC-01",
+        "VC-02",
+        "VC-03"
+      ]
+    },
+    "truck": {
+      "case_count": 4,
+      "case_ids": [
+        "VC-04",
+        "VC-05",
+        "VC-06",
+        "VC-10"
+      ]
+    },
+    "motorcycle": {
+      "case_count": 4,
+      "case_ids": [
+        "VC-07",
+        "VC-08",
+        "VC-09",
+        "VC-12"
+      ]
+    },
+    "car": {
+      "case_count": 1,
+      "case_ids": [
+        "VC-11"
+      ]
+    }
+  },
+  "uncertainty_summary": {
+    "summary": "Across all 12 cases the dominant recurring uncertainty is whether the target region contains the annotated class versus a visually similar alternative (bus vs large van/truck; truck vs large van/bus; motorcycle vs scooter; car vs background fragment). A second recurring theme is whether an IoU shortfall reflects a genuine localization offset versus being a consequence of small object size. A third recurring theme is that several FALSE_POSITIVE labels rest on the annotation set as well as the image (no GT in the region), and that categories such as SMALL_OBJECT and CROWDING are recorded as scene-level contributing difficulties rather than proven causes of any specific prediction.",
+    "grouped_themes": [
+      {
+        "theme": "class identity ambiguity at image scale",
+        "case_ids": [
+          "VC-01",
+          "VC-02",
+          "VC-03",
+          "VC-04",
+          "VC-05",
+          "VC-06",
+          "VC-09",
+          "VC-10",
+          "VC-11",
+          "VC-12"
+        ]
+      },
+      {
+        "theme": "IoU shortfall attributable to localization versus object size",
+        "case_ids": [
+          "VC-01",
+          "VC-02",
+          "VC-03",
+          "VC-04",
+          "VC-05",
+          "VC-06",
+          "VC-10"
+        ]
+      },
+      {
+        "theme": "false positive label dependent on annotation set, not only on pixels",
+        "case_ids": [
+          "VC-01",
+          "VC-02",
+          "VC-03",
+          "VC-11",
+          "VC-12"
+        ]
+      },
+      {
+        "theme": "duplicate detection is a consequence of greedy one-to-one matching rather than of box quality",
+        "case_ids": [
+          "VC-07",
+          "VC-08"
+        ]
+      }
+    ]
+  },
+  "observed_findings": [
+    "All 12 inspected cases were recorded with observed_facts drawn from direct visual inspection of a single image per case.",
+    "Every inspected case is a small/distant object; SMALL_OBJECT appears in all 12 cases.",
+    "FALSE_POSITIVE_BACKGROUND appears in 5 cases (VC-01, VC-02, VC-03, VC-11, VC-12).",
+    "FALSE_NEGATIVE appears in 3 cases (VC-04, VC-05, VC-06), all truck-class.",
+    "DUPLICATE_DETECTION appears in 2 cases (VC-07, VC-08), both motorcycle-class on the same image.",
+    "BORDERLINE_IOU_MATCH appears in 2 cases (VC-01, VC-03), both bus-class.",
+    "LOCALIZATION_ERROR appears in 4 cases (VC-02, VC-04, VC-05, VC-06).",
+    "LOW_CONFIDENCE appears in 2 cases (VC-09, VC-10).",
+    "CROWDING appears in 1 case (VC-12).",
+    "All four object classes are represented: bus (3), truck (4), motorcycle (4), car (1).",
+    "11 of 12 cases are from the test split; 1 case (VC-09) is from the valid split."
+  ],
+  "derived_findings": [
+    "12 cases were inspected in total, each exactly once, with no duplicates.",
+    "The category counts above are mechanical tallies of the categories explicitly recorded in visual_inspection.json.",
+    "The split counts (11 test, 1 valid) are taken directly from the split field recorded in each case record."
+  ],
+  "not_determinable": [
+    "The prevalence of any error category across the full dataset cannot be established from 12 selected cases.",
+    "Whether a category is representative of the overall detector error distribution is not claimed.",
+    "Causality between any recorded category and detector behavior cannot be established.",
+    "Statistical significance of any observed tally cannot be established.",
+    "Whether an uncertainty about class identity or IoU shortfall would resolve one way or the other cannot be determined without additional evidence."
+  ],
+  "scientific_scope_note": "This summary aggregates evidence recorded during 12 single-image visual inspections performed under the D-03 baseline evaluation protocol. Cases were selected deterministically from matching.json evidence and are not a random sample of the dataset. Counts reported here describe the inspected cases only and must not be generalized to dataset-wide error prevalence, detector performance, or category frequency."
+}

@@ -1,0 +1,124 @@
+# D-03 Baseline Evaluation and Visual Error Analysis — Report Sections 1-3
+
+## 1. Research objective
+
+The purpose of the D-03 baseline evaluation is to establish a quantitative reference for the object-detection model at a defined operating point, using metrics computed over the complete evaluated validation and test subsets. The purpose of the subsequent visual error analysis is to examine, case by case, the kinds of detection behaviour that occur in a small set of inspected images. The two components are complementary: the baseline evaluation supplies full-subset numerical evidence, and the visual analysis supplies targeted, per-case observations from a limited sample of images [Source: evidence_integration.json].
+
+The analysis combines three evidence layers that must not be treated as interchangeable. Level A consists of metrics calculated over the full evaluated subsets. Level B consists of machine matching evidence (true positives, false positives, false negatives) for the 12 selected images. Level C consists of direct visual inspection observations recorded for the same 12 cases [Source: scientific_boundary.json]. Statements supported only by Level C must not be presented as supported by Level A.
+
+The scientific scope is deliberately narrow. The visual analysis is limited to 12 inspected cases and is not a statistically representative sample of the dataset. It is a deterministic, error-analysis sample selected from matching evidence. Accordingly, visual findings are reported as observations made in the inspected cases, not as statements about what the dataset as a whole contains, unless independently supported by full-subset numerical evidence [Source: scientific_boundary.json]. No causal relationships are asserted, and no claim is made that the inspected cases reveal a single or primary cause of the model's behaviour.
+
+## 2. Experimental setup
+
+The experimental setup is defined by the evidence artifacts that were produced during the D-03 baseline evaluation and integration, and no further procedural detail is established by the selected sources. The evaluation produced a numerical baseline for the full evaluated validation subset (43 images) and test subset (21 images), recorded in the baseline evaluation summary files and extracted into the numerical baseline artifact [Source: evidence_integration.json].
+
+For the 12 selected images, detection outputs were matched against ground truth using a class-aware, greedy, confidence-ranked, one-to-one matching procedure with an IoU threshold of 0.50 and no non-maximum suppression at evaluation time [Source: evidence_integration.json]. Duplicate detections recorded in the visual cases are an artefact of this matching rule, not a measured property of the detector [Source: scientific_boundary.json]. The aggregate matching totals for the 12 selected images are 781 true positives, 2819 false positives, and 182 false negatives [Source: evidence_integration.json].
+
+The visual inspection component consists of single-image inspection records for 12 cases (VC-01 through VC-12), of which one case (VC-09) originates from the validation split and eleven from the test split [Source: evidence_integration.json]. No new visual observations were created during evidence integration [Source: evidence_integration.json]. Details of the model architecture, training procedure, hardware, and hyperparameters are not established by the currently selected source artifacts and are therefore not reported here.
+
+## 3. Dataset and evaluation protocol
+
+The evaluation protocol distinguishes two full-subset splits. The validation subset contains 43 images with 3337 ground-truth objects and 12900 predictions; the test subset contains 21 images with 1607 ground-truth objects and 6300 predictions [Source: evidence_integration.json]. Overall baseline metrics for both splits, together with per-class breakdowns for bus, car, motorcycle, and truck, are recorded in the numerical baseline artifact [Source: evidence_integration.json].
+
+The person class has no ground truth in either the validation or the test split (status no_ground_truth in both). No person precision, recall, average precision, false-positive, or false-negative conclusion may be inferred from this evidence, and the no_ground_truth status must not be reinterpreted as poor person-class performance [Source: scientific_boundary.json].
+
+The targeted visual-analysis scope is limited to 12 inspected cases, selected deterministically from matching evidence. This is an error-analysis sample, not a statistically representative random sample of the dataset, and it does not replace the full-subset baseline metrics [Source: scientific_boundary.json]. Visual findings are therefore described as observed in the inspected cases, and no claim is made that the observed patterns are prevalent across the full dataset [Source: scientific_boundary.json].
+
+Evidence provenance is maintained through a traceable chain. The numerical baseline is the authoritative Level A source; the matching evidence for the 12 selected images is the authoritative Level B source; and the visual inspection records are the authoritative Level C source. These levels must not be merged into a single undifferentiated claim [Source: scientific_boundary.json]. The integrity audit confirmed that all eleven required artifacts exist and are valid, that no protected file (dataset, checkpoint, evaluation protocol, evaluator, or baseline outputs) was modified during the audit, and that the evidence chain is intact [Source: final_integrity_validation.json].
+
+# D-03 Baseline Evaluation and Visual Error Analysis — Report Sections 4-6
+
+## 4. Baseline quantitative results
+
+The baseline results are recorded for the full evaluated validation subset (43 images) and test subset (21 images) and are reproduced here from the numerical baseline artifact [Source: evidence_integration.json].
+
+Validation overall: mAP@0.5 = 0.680575; mAP@0.5:0.95 = 0.319892; precision = 0.223023; recall = 0.862152. The subset contains 3337 ground-truth objects and 12900 predictions, with 2877 true positives, 10023 false positives, and 460 false negatives [Source: evidence_integration.json].
+
+Test overall: mAP@0.5 = 0.676974; mAP@0.5:0.95 = 0.319613; precision = 0.222698; recall = 0.873055. The subset contains 1607 ground-truth objects and 6300 predictions, with 1403 true positives, 4897 false positives, and 204 false negatives [Source: evidence_integration.json].
+
+Per-class average precision at IoU 0.50 for validation and test respectively: bus 0.857143 / 0.800000; car 0.895222 / 0.894281; motorcycle 0.846828 / 0.865591; truck 0.803681 / 0.825000. The person class has no ground truth in either split, so no person average precision is defined [Source: evidence_integration.json].
+
+Valid-minus-test differences are: mAP@0.5 +0.003601; mAP@0.5:0.95 +0.000279; precision +0.000325; recall -0.010903 [Source: evidence_integration.json]. No further statistics have been computed, and no claim is made that any of these differences is statistically significant [Source: scientific_boundary.json].
+
+## 5. Visual error-analysis findings
+
+Twelve visual cases (VC-01 through VC-12) were inspected, one from the validation split (VC-09) and eleven from the test split [Source: evidence_integration.json]. The following categories were recorded in the inspected cases, together with their evidence support state [Source: evidence_integration.json]:
+
+- SMALL_OBJECT: observed in all 12 cases; PARTIALLY_SUPPORTED.
+- FALSE_POSITIVE_BACKGROUND: observed in VC-01, VC-02, VC-03, VC-11, VC-12; PARTIALLY_SUPPORTED.
+- LOCALIZATION_ERROR: observed in VC-02, VC-04, VC-05, VC-06; PARTIALLY_SUPPORTED.
+- FALSE_NEGATIVE: observed in VC-04, VC-05, VC-06; PARTIALLY_SUPPORTED.
+- DUPLICATE_DETECTION: observed in VC-07, VC-08; NOT_DIRECTLY_SUPPORTED.
+- LOW_CONFIDENCE: observed in VC-09, VC-10; NOT_DIRECTLY_SUPPORTED.
+- CROWDING: observed in VC-12; NOT_DIRECTLY_SUPPORTED.
+- BORDERLINE_IOU_MATCH: observed in VC-01 (IoU 0.4718) and VC-03 (IoU 0.4582); SUPPORTED.
+
+The only category with full support is BORDERLINE_IOU_MATCH, whose status rests on the fixed 0.50 IoU matching threshold [Source: scientific_boundary.json]. The machine matching evidence for the 12 selected images gives aggregate totals of 781 true positives, 2819 false positives, and 182 false negatives [Source: evidence_integration.json].
+
+These findings are observations made in the inspected cases. They are not statements about what the dataset as a whole contains, and the 12-case sample is a deterministic error-analysis sample, not a statistically representative random sample [Source: scientific_boundary.json].
+
+## 6. Integrated evidence interpretation
+
+The evidence supports a limited set of observations. Recall is substantially higher than precision at the evaluated operating point in both splits, and false positives are numerous relative to true positives [Source: scientific_boundary.json]. False negatives occur across the evaluated classes, and valid and test aggregate performance are close [Source: scientific_boundary.json]. The gap between average precision at IoU 0.50 and average precision over IoU 0.50-0.95 is substantial for every evaluated class in both splits [Source: scientific_boundary.json].
+
+The large AP@0.5 versus AP@0.5:0.95 gap is partially consistent with localization weakness, but the numerical evidence cannot establish that localization is the sole or primary weakness, nor that it applies to any specific inspected case [Source: scientific_boundary.json]. The low aggregate precision is partially consistent with the presence of many false positives, but the mechanism behind any specific false positive cannot be established, including whether any are background artefacts or duplicate detections [Source: scientific_boundary.json]. The residual false-negative counts are partially consistent with missed detections, but the representativeness of the inspected truck cases cannot be established [Source: scientific_boundary.json].
+
+The following cannot be established from the current evidence: that all false positives are duplicate detections; that low precision is caused by duplicate detections; that every localization error is caused by small objects; that the AP gap proves localization is the sole weakness; that low confidence is the cause of false positives; that crowding is the cause of the observed errors; or that the visual findings from 12 cases represent the entire dataset statistically [Source: scientific_boundary.json]. Person-class performance cannot be established, because the person class has no ground truth in the evaluated validation and test subsets [Source: scientific_boundary.json].
+
+# D-03 Baseline Evaluation and Visual Error Analysis — Report Sections 7-9
+
+## 7. Error-pattern synthesis
+
+Observed numerical patterns. At the evaluated operating point, recall is substantially higher than precision in both splits (validation recall 0.862152 vs precision 0.223023; test recall 0.873055 vs precision 0.222698) [Source: scientific_boundary.json]. False positives are numerous relative to true positives in both splits (validation 10023 FP vs 2877 TP; test 4897 FP vs 1403 TP), and false negatives occur across the evaluated classes (validation 460 FN; test 204 FN) [Source: scientific_boundary.json]. The gap between average precision at IoU 0.50 and average precision over IoU 0.50-0.95 is substantial for every evaluated class in both splits [Source: scientific_boundary.json]. Valid and test aggregate performance are close on all four overall metrics [Source: scientific_boundary.json].
+
+Observed visual patterns. In the 12 inspected cases, patterns associated with small objects were observed in all 12 cases; background false positives in VC-01, VC-02, VC-03, VC-11, and VC-12; localization difficulty in VC-02, VC-04, VC-05, and VC-06; false negatives in VC-04, VC-05, and VC-06; duplicate detections in VC-07 and VC-08; low-confidence detections in VC-09 and VC-10; and crowding in VC-12 [Source: scientific_boundary.json]. Two cases, VC-01 and VC-03, show borderline IoU behaviour relative to the 0.50 matching threshold (IoU 0.4718 and 0.4582 respectively) [Source: scientific_boundary.json].
+
+Partially supported interpretations. The large AP@0.5 versus AP@0.5:0.95 gap is partially consistent with localization weakness, but the numerical evidence cannot establish that localization is the sole or primary weakness [Source: scientific_boundary.json]. The low aggregate precision is partially consistent with the presence of many false positives, but the mechanism behind any specific false positive cannot be established [Source: scientific_boundary.json]. The residual false-negative counts are partially consistent with missed detections, but the representativeness of the inspected cases cannot be established [Source: scientific_boundary.json].
+
+Unresolved explanations. It cannot be established from the current evidence that all false positives are duplicate detections, that low precision is caused by duplicate detections, that every localization error is caused by small objects, that the AP gap proves localization is the sole weakness, that low confidence is the cause of false positives, or that crowding is the cause of the observed errors [Source: scientific_boundary.json]. Duplicate detections recorded in the visual cases are a consequence of the greedy one-to-one matching rule, not of box quality [Source: scientific_boundary.json].
+
+## 8. Limitations
+
+Limited visual sample size. Only 12 visual cases were inspected, one from the validation split (VC-09) and eleven from the test split [Source: evidence_integration.json]. The sample was selected deterministically from matching evidence and is an error-analysis sample, not a statistically representative random sample of the dataset [Source: scientific_boundary.json]. Visual findings are therefore described as observed in the inspected cases and must not be described as what the dataset contains unless independently supported by full-subset numerical evidence [Source: scientific_boundary.json].
+
+Absence of certain prediction-level information. No confidence distribution field exists in the baseline summary, so per-prediction confidence cannot be measured or compared [Source: scientific_boundary.json]. Aggregate precision, recall, and average precision measure detection quality at the evaluated operating point and cannot by themselves establish the mechanism behind any specific false positive or false negative [Source: scientific_boundary.json].
+
+Person-class evaluation limitation. The person class has no ground truth in the evaluated validation and test subsets (status no_ground_truth in both splits) [Source: scientific_boundary.json]. No person precision, recall, average precision, false-positive, or false-negative conclusion may be inferred, and the no_ground_truth status must not be reinterpreted as poor person-class performance [Source: scientific_boundary.json].
+
+Uncertainty of causal attribution. Causal mechanisms cannot be established where the evidence is insufficient, and no direct causal establishment exists in the current D-03 evidence [Source: scientific_boundary.json]. The matching procedure is class-aware, greedy, confidence-ranked, one-to-one, with IoU at least 0.50 and no non-maximum suppression at evaluation time; duplicate detections are an artefact of that matching rule, not a measured detector property [Source: evidence_integration.json].
+
+Inability to establish statistical representativeness. Visual evidence does not establish dataset-wide prevalence of any error category, and aggregate baseline metrics come from the full evaluated subsets rather than from the 12 inspected cases [Source: scientific_boundary.json]. The valid/test difference cannot be established as statistically significant, because no statistical test was performed and the difference is small in absolute terms [Source: scientific_boundary.json].
+
+## 9. Scientific interpretation
+
+Established findings. The most defensible interpretation is limited to the following. Recall is substantially higher than precision at the evaluated operating point in both splits, and false positives are numerous relative to true positives [Source: scientific_boundary.json]. False negatives occur across the evaluated classes, and valid and test aggregate performance are close [Source: scientific_boundary.json]. The AP@0.5 to AP@0.5:0.95 gap is substantial for every evaluated class in both splits [Source: scientific_boundary.json]. Some inspected cases show borderline IoU behaviour relative to the 0.50 matching threshold, and the visual patterns listed in Section 7 were observed in the inspected cases [Source: scientific_boundary.json].
+
+Partially supported interpretations. The large AP gap is partially consistent with localization weakness, but localization is not established as the sole or primary weakness [Source: scientific_boundary.json]. The low aggregate precision is partially consistent with many false positives, but the mechanism is not established [Source: scientific_boundary.json]. The residual false-negative counts are partially consistent with missed detections, but representativeness is not established [Source: scientific_boundary.json].
+
+Unestablished conclusions. It cannot be established that the AP gap proves localization is the sole weakness, that low confidence causes false positives, that crowding causes the observed errors, that all false positives are duplicate detections, or that the visual findings from 12 cases represent the entire dataset statistically [Source: scientific_boundary.json]. Person-class performance cannot be established, because the person class has no ground truth in the evaluated validation and test subsets [Source: scientific_boundary.json]. No generalization failure can be concluded from individual case differences [Source: scientific_boundary.json].
+
+# D-03 Baseline Evaluation and Visual Error Analysis — Report Sections 10-12
+
+## 10. Conclusions
+
+The conclusions that can be drawn are limited to findings explicitly supported by the integrated evidence.
+
+Directly established numerical findings. At the evaluated operating point, recall is substantially higher than precision in both the validation and test splits, and false positives are numerous relative to true positives in both splits [Source: scientific_boundary.json]. False negatives occur across the evaluated classes, and valid and test aggregate performance are close on all four overall metrics [Source: scientific_boundary.json]. The gap between average precision at IoU 0.50 and average precision over IoU 0.50-0.95 is substantial for every evaluated class in both splits [Source: scientific_boundary.json].
+
+Machine-supported findings. For the 12 selected images, the class-aware greedy confidence-ranked one-to-one matching procedure at IoU 0.50 yields 781 true positives, 2819 false positives, and 182 false negatives in aggregate [Source: evidence_integration.json]. Two inspected cases, VC-01 and VC-03, show borderline IoU behaviour relative to the 0.50 threshold (IoU 0.4718 and 0.4582 respectively) [Source: scientific_boundary.json].
+
+Visually observed patterns. In the 12 inspected cases, patterns associated with small objects, background false positives, localization difficulty, false negatives, duplicate detections, low-confidence detections, and crowding were observed [Source: scientific_boundary.json]. The BORDERLINE_IOU_MATCH category is the only one with full support; the remaining categories are either partially supported or not directly supported [Source: scientific_boundary.json].
+
+Partially supported interpretations. The large AP gap is partially consistent with localization weakness, but localization is not established as the sole or primary weakness [Source: scientific_boundary.json]. The low aggregate precision is partially consistent with many false positives, but the mechanism is not established [Source: scientific_boundary.json]. The residual false-negative counts are partially consistent with missed detections, but representativeness is not established [Source: scientific_boundary.json].
+
+Unresolved explanations. The following remain unestablished and are not concluded here: that all false positives are duplicate detections; that low precision is caused by duplicate detections; that every localization error is caused by small objects; that the AP gap proves localization is the sole weakness; that low confidence is the cause of false positives; that crowding is the cause of the observed errors; and that the visual findings from 12 cases represent the entire dataset statistically [Source: scientific_boundary.json]. Person-class performance cannot be established, because the person class has no ground truth in the evaluated validation and test subsets [Source: scientific_boundary.json].
+
+## 11. Research-scope boundary
+
+What this analysis establishes. The D-03 analysis establishes a full-subset numerical baseline for the evaluated validation and test splits, machine matching evidence for 12 selected images, and direct visual inspection observations for 12 cases, together with a traceable mapping between them [Source: evidence_integration.json]. It establishes that the recorded numerical and visual patterns are present in the evaluated subsets and in the inspected cases, within the limits of the available evidence [Source: scientific_boundary.json].
+
+What this analysis does not establish. The visual sample is limited to 12 cases, selected deterministically from matching evidence, and is an error-analysis sample rather than a statistically representative random sample of the dataset [Source: scientific_boundary.json]. Visual findings must be described as observed in the inspected cases and must not be described as what the dataset contains unless independently supported by full-subset numerical evidence [Source: scientific_boundary.json]. No confidence distribution field exists in the baseline summary, so per-prediction confidence cannot be measured [Source: scientific_boundary.json]. The person class has no ground truth in the evaluated validation and test subsets, so no person precision, recall, average precision, false-positive, or false-negative conclusion may be inferred, and the no_ground_truth status must not be reinterpreted as poor person-class performance [Source: scientific_boundary.json]. Causal mechanisms cannot be established where the evidence is insufficient, and duplicate detections recorded in the visual cases are an artefact of the greedy one-to-one matching rule rather than a measured detector property [Source: scientific_boundary.json; evidence_integration.json]. The valid/test difference cannot be established as statistically significant, because no statistical test was performed and the difference is small in absolute terms [Source: scientific_boundary.json]. No generalization failure can be concluded from individual case differences [Source: scientific_boundary.json].
+
+## 12. Evidence traceability
+
+The final findings can be traced back to the underlying artifacts through a layered evidence chain. The full-subset numerical baseline is recorded in the numerical baseline extraction artifact, which is the authoritative Level A source for overall and per-class metrics [Source: evidence_integration.json]. The machine matching evidence for the 12 selected images is recorded in the matching artifact, the authoritative Level B source [Source: evidence_integration.json]. The direct visual inspection observations are recorded in the visual inspection artifact, the authoritative Level C source [Source: evidence_integration.json]. The aggregated visual error categories and their uncertainty information are recorded in the visual error summary artifact [Source: evidence_integration.json]. The visual-to-numerical support status for each category is recorded in the evidence mapping artifact [Source: evidence_integration.json]. The interpretation constraints are recorded in the scientific boundary artifact [Source: scientific_boundary.json]. The integrated evidence relationships, support states, and limitations are recorded in the evidence integration artifact [Source: evidence_integration.json]. The integrity audit confirmed that all eleven required artifacts exist and are valid, that the evidence chain is intact, and that no protected file was modified during the audit [Source: final_integrity_validation.json]. These levels must not be merged into a single undifferentiated claim, and a statement supported only by one level must not be presented as supported by another [Source: scientific_boundary.json].

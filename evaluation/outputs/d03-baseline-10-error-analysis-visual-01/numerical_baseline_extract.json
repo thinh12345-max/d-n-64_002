@@ -1,0 +1,195 @@
+{
+  "analysis_id": "d03-baseline-10-error-analysis-visual-01",
+  "source_valid_summary": "evaluation/outputs/d03-baseline-10-eval-01/split_valid.summary.json",
+  "source_test_summary": "evaluation/outputs/d03-baseline-10-eval-01/split_test.summary.json",
+  "valid_overall": {
+    "split": "valid",
+    "image_count": 43,
+    "map_0.5": 0.680575,
+    "map_0.5_0.95": 0.319892,
+    "precision": 0.223023,
+    "recall": 0.862152,
+    "total_ground_truth_objects": 3337,
+    "total_predictions": 12900,
+    "total_tp": 2877,
+    "total_fp": 10023,
+    "total_fn": 460
+  },
+  "test_overall": {
+    "split": "test",
+    "image_count": 21,
+    "map_0.5": 0.676974,
+    "map_0.5_0.95": 0.319613,
+    "precision": 0.222698,
+    "recall": 0.873055,
+    "total_ground_truth_objects": 1607,
+    "total_predictions": 6300,
+    "total_tp": 1403,
+    "total_fp": 4897,
+    "total_fn": 204
+  },
+  "valid_per_class": {
+    "bus": {
+      "class_name": "bus",
+      "gt": 42,
+      "predictions": 227,
+      "tp": 36,
+      "fp": 191,
+      "fn": 6,
+      "precision": 0.15859,
+      "recall": 0.857143,
+      "ap05": 0.857143,
+      "ap50_95": 0.397619,
+      "status": null
+    },
+    "car": {
+      "class_name": "car",
+      "gt": 1193,
+      "predictions": 5616,
+      "tp": 1068,
+      "fp": 4548,
+      "fn": 125,
+      "precision": 0.190171,
+      "recall": 0.895222,
+      "ap05": 0.895222,
+      "ap50_95": 0.432775,
+      "status": null
+    },
+    "motorcycle": {
+      "class_name": "motorcycle",
+      "gt": 1939,
+      "predictions": 6342,
+      "tp": 1642,
+      "fp": 4700,
+      "fn": 297,
+      "precision": 0.258909,
+      "recall": 0.846828,
+      "ap05": 0.846828,
+      "ap50_95": 0.399742,
+      "status": null
+    },
+    "person": {
+      "class_name": "person",
+      "gt": 0,
+      "predictions": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "ap05": 0.0,
+      "ap50_95": 0.0,
+      "status": "no_ground_truth",
+      "status_source": "split_valid.summary.json -> person.status"
+    },
+    "truck": {
+      "class_name": "truck",
+      "gt": 163,
+      "predictions": 715,
+      "tp": 131,
+      "fp": 584,
+      "fn": 32,
+      "precision": 0.183217,
+      "recall": 0.803681,
+      "ap05": 0.803681,
+      "ap50_95": 0.369325,
+      "status": null
+    }
+  },
+  "test_per_class": {
+    "bus": {
+      "class_name": "bus",
+      "gt": 20,
+      "predictions": 112,
+      "tp": 16,
+      "fp": 96,
+      "fn": 4,
+      "precision": 0.142857,
+      "recall": 0.8,
+      "ap05": 0.8,
+      "ap50_95": 0.39,
+      "status": null
+    },
+    "car": {
+      "class_name": "car",
+      "gt": 577,
+      "predictions": 2713,
+      "tp": 516,
+      "fp": 2197,
+      "fn": 61,
+      "precision": 0.190195,
+      "recall": 0.894281,
+      "ap05": 0.894281,
+      "ap50_95": 0.422704,
+      "status": null
+    },
+    "motorcycle": {
+      "class_name": "motorcycle",
+      "gt": 930,
+      "predictions": 3096,
+      "tp": 805,
+      "fp": 2291,
+      "fn": 125,
+      "precision": 0.260013,
+      "recall": 0.865591,
+      "ap05": 0.865591,
+      "ap50_95": 0.391613,
+      "status": null
+    },
+    "person": {
+      "class_name": "person",
+      "gt": 0,
+      "predictions": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "ap05": 0.0,
+      "ap50_95": 0.0,
+      "status": "no_ground_truth",
+      "status_source": "split_test.summary.json -> person.status"
+    },
+    "truck": {
+      "class_name": "truck",
+      "gt": 80,
+      "predictions": 379,
+      "tp": 66,
+      "fp": 313,
+      "fn": 14,
+      "precision": 0.174142,
+      "recall": 0.825,
+      "ap05": 0.825,
+      "ap50_95": 0.39375,
+      "status": null
+    }
+  },
+  "valid_test_differences": {
+    "map_0.5_diff": 0.003601,
+    "map_0.5_0.95_diff": 0.000279,
+    "precision_diff": 0.000325,
+    "recall_diff": -0.010903,
+    "per_class": {
+      "bus": {
+        "ap05_diff": 0.057143,
+        "ap50_95_diff": 0.007619
+      },
+      "car": {
+        "ap05_diff": 0.000941,
+        "ap50_95_diff": 0.010071
+      },
+      "motorcycle": {
+        "ap05_diff": -0.018763,
+        "ap50_95_diff": 0.008129
+      },
+      "person": {
+        "note": "no_ground_truth in both splits; AP undefined, difference not computed"
+      },
+      "truck": {
+        "ap05_diff": -0.021319,
+        "ap50_95_diff": -0.024425
+      }
+    }
+  },
+  "extraction_scope": "Numerical values extracted verbatim from the two baseline evaluation summary JSON files. Totals (gt/predictions/tp/fp/fn) are sums of the per-class values recorded in those files. Differences are valid minus test. No interpretation, no additional statistics, no values from other artifacts."
+}

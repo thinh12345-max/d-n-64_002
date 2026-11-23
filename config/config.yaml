@@ -1,0 +1,72 @@
+project:
+  name: "traffic_ai"
+  version: "1.0"
+
+model:
+  path: "runs/detect/train-16/weights/best.pt"
+  imgsz: 640
+  confidence: 0.2
+  iou: 0.5
+  device: "auto"  # auto, cpu, cuda, mps
+
+video:
+  source: "public/3.mp4"
+  output: "outputs/"
+  frame_size: [1020, 500]
+  frame_skip: 0  # 0 = process every frame
+
+tracker:
+  type: "bytetrack"
+  config:
+    stale_frames: 30
+
+roi:
+  enabled: true
+  points:
+    - [80, 40]
+    - [80, 490]
+    - [1000, 500]
+    - [1000, 40]
+
+counting:
+  countable_labels:
+    - "car"
+    - "motorcycle"
+    - "bus"
+    - "truck"
+    - "person"
+  min_confidence: 0.2
+  min_box_size: 10
+
+output:
+  directory: "outputs/"
+  save_json: true
+  json_filename: "vehicle_counts.json"
+  save_video: false
+  video_filename: "output_video.mp4"
+  video_fps: 30
+
+visualization:
+  show_window: true
+  window_name: "AI Counting - Single Tracker"
+  roi_color: [0, 0, 255]
+  roi_thickness: 2
+  outside_roi_color: [128, 128, 128]
+  class_colors:
+    car: [0, 255, 0]
+    motorcycle: [0, 255, 255]
+    bus: [255, 255, 0]
+    truck: [255, 0, 255]
+    person: [255, 0, 0]
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+seeds:
+  random: 42
+  numpy: 42
+  torch: 42
+  torch_cuda: 42
+  cudnn_deterministic: true
+  cudnn_benchmark: false

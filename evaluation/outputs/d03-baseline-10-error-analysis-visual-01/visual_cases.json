@@ -1,0 +1,241 @@
+{
+ "analysis_id": "d03-baseline-10-error-analysis-visual-01",
+ "source_evaluation_run": "evaluation/outputs/d03-baseline-10-eval-01",
+ "source_matching_artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/matching.json",
+ "selection_method": {
+  "description": "Deterministic case selection from matching.json evidence only. No image pixels inspected. Categories selected in fixed order (FALSE_POSITIVE, FALSE_NEGATIVE, DUPLICATE_DETECTION, BORDERLINE_IOU_MATCH, HIGH_CONFIDENCE_FAILURE). Within each category candidates are sorted by a fixed key and the first qualifying entries are taken, skipping any (image_path, prediction_index) or (image_path, GT index) already used by an earlier case so no underlying image/case is duplicated.",
+  "sort_keys": {
+   "FALSE_POSITIVE": "split asc, class_id asc, confidence desc, image_path asc, prediction_index asc",
+   "FALSE_NEGATIVE": "split asc, class_id desc, image_path asc, gt_index asc",
+   "DUPLICATE_DETECTION": "confidence desc, image_path asc, prediction_index asc (pool: FP with same-class GT IoU >= 0.50)",
+   "BORDERLINE_IOU_MATCH": "IoU asc, image_path asc, prediction_index asc (pool: TP with IoU in [0.50, 0.60])",
+   "HIGH_CONFIDENCE_FAILURE": "confidence desc, image_path asc, prediction_index asc (pool: all FP)"
+  },
+  "no_random_sampling": true,
+  "no_semantic_inference": true
+ },
+ "total_case_count": 12,
+ "cases": [
+  {
+   "case_id": "VC-01",
+   "category": "FALSE_POSITIVE",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_104_jpg.rf.86c46a0d54b4604cd216ac1dd759049d.jpg",
+   "class_id": 0,
+   "class_name": "bus",
+   "selection_reason": "highest-confidence FP per (split, class) in ascending class order",
+   "prediction_index": 28,
+   "confidence": 0.3933946490287781,
+   "predicted_bbox": [
+    0.391891575,
+    0.892593956,
+    0.405462694,
+    0.922010231
+   ]
+  },
+  {
+   "case_id": "VC-02",
+   "category": "FALSE_POSITIVE",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_15_jpg.rf.2249587c24e46c4c1ccb8d9e05756f81.jpg",
+   "class_id": 0,
+   "class_name": "bus",
+   "selection_reason": "highest-confidence FP per (split, class) in ascending class order",
+   "prediction_index": 33,
+   "confidence": 0.382347047328949,
+   "predicted_bbox": [
+    0.432555819,
+    0.75155859,
+    0.450182676,
+    0.793244839
+   ]
+  },
+  {
+   "case_id": "VC-03",
+   "category": "FALSE_POSITIVE",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_104_jpg.rf.86c46a0d54b4604cd216ac1dd759049d.jpg",
+   "class_id": 0,
+   "class_name": "bus",
+   "selection_reason": "highest-confidence FP per (split, class) in ascending class order",
+   "prediction_index": 127,
+   "confidence": 0.2238447517156601,
+   "predicted_bbox": [
+    0.392907262,
+    0.889504242,
+    0.407865047,
+    0.920927811
+   ]
+  },
+  {
+   "case_id": "VC-04",
+   "category": "FALSE_NEGATIVE",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_104_jpg.rf.86c46a0d54b4604cd216ac1dd759049d.jpg",
+   "class_id": 4,
+   "class_name": "truck",
+   "selection_reason": "missed GT per (split, descending class) in ascending image order",
+   "gt_index": 54,
+   "gt_bbox": [
+    0.8777345,
+    0.1621095,
+    0.8894535,
+    0.1863285
+   ]
+  },
+  {
+   "case_id": "VC-05",
+   "category": "FALSE_NEGATIVE",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_15_jpg.rf.2249587c24e46c4c1ccb8d9e05756f81.jpg",
+   "class_id": 4,
+   "class_name": "truck",
+   "selection_reason": "missed GT per (split, descending class) in ascending image order",
+   "gt_index": 29,
+   "gt_bbox": [
+    0.8750005,
+    0.146484,
+    0.9046875,
+    0.186328
+   ]
+  },
+  {
+   "case_id": "VC-06",
+   "category": "FALSE_NEGATIVE",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_72_jpg.rf.ff2468668f7f03adea4416a41b701a47.jpg",
+   "class_id": 4,
+   "class_name": "truck",
+   "selection_reason": "missed GT per (split, descending class) in ascending image order",
+   "gt_index": 33,
+   "gt_bbox": [
+    0.878906,
+    0.1636725,
+    0.891406,
+    0.1957035
+   ]
+  },
+  {
+   "case_id": "VC-07",
+   "category": "DUPLICATE_DETECTION",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_187_jpg.rf.2210d9f0b1b9a03f39886babe41adc1c.jpg",
+   "class_id": 2,
+   "class_name": "motorcycle",
+   "selection_reason": "FP prediction overlapping a same-class GT with IoU>=0.50; that GT was matched by a higher-confidence prediction earlier in the greedy pass",
+   "prediction_index": 47,
+   "gt_index": 74,
+   "confidence": 0.4066668450832367,
+   "iou": 0.627732305046965,
+   "predicted_bbox": [
+    0.672386408,
+    0.941654205,
+    0.682030725,
+    0.959521866
+   ],
+   "gt_bbox": [
+    0.673047,
+    0.9453125,
+    0.683203,
+    0.9609375
+   ]
+  },
+  {
+   "case_id": "VC-08",
+   "category": "DUPLICATE_DETECTION",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_187_jpg.rf.2210d9f0b1b9a03f39886babe41adc1c.jpg",
+   "class_id": 2,
+   "class_name": "motorcycle",
+   "selection_reason": "FP prediction overlapping a same-class GT with IoU>=0.50; that GT was matched by a higher-confidence prediction earlier in the greedy pass",
+   "prediction_index": 52,
+   "gt_index": 68,
+   "confidence": 0.3867965340614319,
+   "iou": 0.7246194118594759,
+   "predicted_bbox": [
+    0.695119333,
+    0.911394978,
+    0.706344461,
+    0.929232693
+   ],
+   "gt_bbox": [
+    0.6921875000000001,
+    0.910156,
+    0.7062505,
+    0.928906
+   ]
+  },
+  {
+   "case_id": "VC-09",
+   "category": "BORDERLINE_IOU_MATCH",
+   "split": "valid",
+   "image_path": "My-First-Project-4-detection\\valid\\images\\frame_52_jpg.rf.e7b90717d78ef692f805ed12dfd3256d.jpg",
+   "class_id": 2,
+   "class_name": "motorcycle",
+   "selection_reason": "TP with IoU in [0.50,0.60], sorted ascending by IoU",
+   "prediction_index": 209,
+   "gt_index": 8,
+   "confidence": 0.07793611288070679,
+   "iou": 0.500132656,
+   "predicted_bbox": [
+    0.85311594,
+    0.67699604,
+    0.864399242,
+    0.710977745
+   ]
+  },
+  {
+   "case_id": "VC-10",
+   "category": "BORDERLINE_IOU_MATCH",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_15_jpg.rf.2249587c24e46c4c1ccb8d9e05756f81.jpg",
+   "class_id": 4,
+   "class_name": "truck",
+   "selection_reason": "TP with IoU in [0.50,0.60], sorted ascending by IoU",
+   "prediction_index": 115,
+   "gt_index": 27,
+   "confidence": 0.24081511795520782,
+   "iou": 0.500603354,
+   "predicted_bbox": [
+    0.472051001,
+    0.271766424,
+    0.49168601,
+    0.312598658
+   ]
+  },
+  {
+   "case_id": "VC-11",
+   "category": "HIGH_CONFIDENCE_FAILURE",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_187_jpg.rf.2210d9f0b1b9a03f39886babe41adc1c.jpg",
+   "class_id": 1,
+   "class_name": "car",
+   "selection_reason": "highest-confidence false positive across all 12 images",
+   "prediction_index": 0,
+   "confidence": 0.5904756188392639,
+   "predicted_bbox": [
+    0.005451086,
+    0.0,
+    0.041201591,
+    0.037099749
+   ]
+  },
+  {
+   "case_id": "VC-12",
+   "category": "HIGH_CONFIDENCE_FAILURE",
+   "split": "test",
+   "image_path": "My-First-Project-4-detection\\test\\images\\frame_187_jpg.rf.2210d9f0b1b9a03f39886babe41adc1c.jpg",
+   "class_id": 2,
+   "class_name": "motorcycle",
+   "selection_reason": "highest-confidence false positive across all 12 images",
+   "prediction_index": 2,
+   "confidence": 0.5506041049957275,
+   "predicted_bbox": [
+    0.964297485,
+    0.936988068,
+    0.981416702,
+    0.964221954
+   ]
+  }
+ ]
+}

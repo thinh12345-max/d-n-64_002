@@ -1,0 +1,4 @@
+run_id,timestamp,frames_processed,benchmark_duration_sec,input_fps,processing_fps,total_mean_latency_ms,total_median_latency_ms,total_p95_latency_ms,cpu_avg_percent,ram_avg_mb
+1,2026-08-16T23:42:44.510184,500,75.01,15.0,6.67,147.74,137.86,227.79,752.21,551.61
+2,2026-08-16T23:44:02.859666,500,73.93,15.0,6.76,145.58,142.01,160.4,786.22,553.39
+3,2026-08-16T23:45:21.789894,500,74.4,15.0,6.72,146.6,141.62,177.82,781.47,554.71

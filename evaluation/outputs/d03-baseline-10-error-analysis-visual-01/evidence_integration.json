@@ -1,0 +1,609 @@
+{
+  "analysis_id": "d03-baseline-10-error-analysis-visual-01",
+  "integration_scope": "Integration of four existing evidence layers into one traceable artifact: full-dataset numerical baseline, 12-case machine matching evidence, 12-case visual inspection evidence, visual-to-numerical mapping, and scientific interpretation boundaries. This is an evidence integration layer, not a final discussion. No new evidence, no new visual observations, no causal claims, no recommendations, no hypotheses, and no proposed experiments are introduced.",
+  "evidence_sources": [
+    {
+      "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/numerical_baseline_extract.json",
+      "role": "authoritative full valid/test numerical baseline (LEVEL A)"
+    },
+    {
+      "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/matching.json",
+      "role": "authoritative 12-image TP/FP/FN machine matching evidence (LEVEL B)"
+    },
+    {
+      "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/visual_inspection.json",
+      "role": "authoritative 12-case visual inspection records (LEVEL C)"
+    },
+    {
+      "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/visual_error_summary.json",
+      "role": "aggregated visual error categories and uncertainty summary"
+    },
+    {
+      "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_mapping.json",
+      "role": "authoritative visual-to-numerical support status for each category"
+    },
+    {
+      "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/scientific_boundary.json",
+      "role": "authoritative interpretation constraints"
+    }
+  ],
+  "numerical_baseline": {
+    "source": "numerical_baseline_extract.json",
+    "valid_overall": {
+      "split": "valid",
+      "image_count": 43,
+      "map_0.5": 0.680575,
+      "map_0.5_0.95": 0.319892,
+      "precision": 0.223023,
+      "recall": 0.862152,
+      "total_ground_truth_objects": 3337,
+      "total_predictions": 12900,
+      "total_tp": 2877,
+      "total_fp": 10023,
+      "total_fn": 460
+    },
+    "test_overall": {
+      "split": "test",
+      "image_count": 21,
+      "map_0.5": 0.676974,
+      "map_0.5_0.95": 0.319613,
+      "precision": 0.222698,
+      "recall": 0.873055,
+      "total_ground_truth_objects": 1607,
+      "total_predictions": 6300,
+      "total_tp": 1403,
+      "total_fp": 4897,
+      "total_fn": 204
+    },
+    "valid_test_differences": {
+      "map_0.5_diff": 0.003601,
+      "map_0.5_0.95_diff": 0.000279,
+      "precision_diff": 0.000325,
+      "recall_diff": -0.010903
+    },
+    "per_class": {
+      "bus": {
+        "valid": {
+          "gt": 42,
+          "predictions": 227,
+          "tp": 36,
+          "fp": 191,
+          "fn": 6,
+          "precision": 0.15859,
+          "recall": 0.857143,
+          "ap05": 0.857143,
+          "ap50_95": 0.397619
+        },
+        "test": {
+          "gt": 20,
+          "predictions": 112,
+          "tp": 16,
+          "fp": 96,
+          "fn": 4,
+          "precision": 0.142857,
+          "recall": 0.8,
+          "ap05": 0.8,
+          "ap50_95": 0.39
+        },
+        "ap05_diff": 0.057143,
+        "ap50_95_diff": 0.007619
+      },
+      "car": {
+        "valid": {
+          "gt": 1193,
+          "predictions": 5616,
+          "tp": 1068,
+          "fp": 4548,
+          "fn": 125,
+          "precision": 0.190171,
+          "recall": 0.895222,
+          "ap05": 0.895222,
+          "ap50_95": 0.432775
+        },
+        "test": {
+          "gt": 577,
+          "predictions": 2713,
+          "tp": 516,
+          "fp": 2197,
+          "fn": 61,
+          "precision": 0.190195,
+          "recall": 0.894281,
+          "ap05": 0.894281,
+          "ap50_95": 0.422704
+        },
+        "ap05_diff": 0.000941,
+        "ap50_95_diff": 0.010071
+      },
+      "motorcycle": {
+        "valid": {
+          "gt": 1939,
+          "predictions": 6342,
+          "tp": 1642,
+          "fp": 4700,
+          "fn": 297,
+          "precision": 0.258909,
+          "recall": 0.846828,
+          "ap05": 0.846828,
+          "ap50_95": 0.399742
+        },
+        "test": {
+          "gt": 930,
+          "predictions": 3096,
+          "tp": 805,
+          "fp": 2291,
+          "fn": 125,
+          "precision": 0.260013,
+          "recall": 0.865591,
+          "ap05": 0.865591,
+          "ap50_95": 0.391613
+        },
+        "ap05_diff": -0.018763,
+        "ap50_95_diff": 0.008129
+      },
+      "truck": {
+        "valid": {
+          "gt": 163,
+          "predictions": 715,
+          "tp": 131,
+          "fp": 584,
+          "fn": 32,
+          "precision": 0.183217,
+          "recall": 0.803681,
+          "ap05": 0.803681,
+          "ap50_95": 0.369325
+        },
+        "test": {
+          "gt": 80,
+          "predictions": 379,
+          "tp": 66,
+          "fp": 313,
+          "fn": 14,
+          "precision": 0.174142,
+          "recall": 0.825,
+          "ap05": 0.825,
+          "ap50_95": 0.39375
+        },
+        "ap05_diff": -0.021319,
+        "ap50_95_diff": -0.024425
+      },
+      "person": {
+        "valid": {
+          "gt": 0,
+          "predictions": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "ap05": 0.0,
+          "ap50_95": 0.0,
+          "status": "no_ground_truth"
+        },
+        "test": {
+          "gt": 0,
+          "predictions": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "ap05": 0.0,
+          "ap50_95": 0.0,
+          "status": "no_ground_truth"
+        }
+      }
+    },
+    "person_status_note": "person has no ground truth in the evaluated valid and test subsets (status no_ground_truth in both splits). No person precision, recall, AP, false-positive, or false-negative conclusion may be inferred."
+  },
+  "machine_error_evidence": {
+    "source": "matching.json",
+    "matching_iou_threshold": 0.5,
+    "matching_method": "class_aware_greedy_confidence_ranked_one_to_one_iou_ge_0.50_no_nms",
+    "matching_engine": "evaluation/metric_engine.py:match_one_class (read-only)",
+    "aggregate_12_images": {
+      "TP": 781,
+      "FP": 2819,
+      "FN": 182
+    },
+    "aggregate_valid_images": {
+      "TP": 411,
+      "FP": 1389,
+      "FN": 73
+    },
+    "aggregate_test_images": {
+      "TP": 370,
+      "FP": 1430,
+      "FN": 109
+    },
+    "per_image": [
+      {
+        "image_stem": "frame_111_jpg.rf.8a0c48f62a56350ec4ebac3e11526e18",
+        "split": "valid",
+        "prediction_count": 300,
+        "ground_truth_count": 77,
+        "TP": 72,
+        "FP": 228,
+        "FN": 5
+      },
+      {
+        "image_stem": "frame_152_jpg.rf.d3bf08d3f75d362b5c7e25a4e4560f8a",
+        "split": "valid",
+        "prediction_count": 300,
+        "ground_truth_count": 81,
+        "TP": 77,
+        "FP": 223,
+        "FN": 4
+      },
+      {
+        "image_stem": "frame_195_jpg.rf.a9012cc88e832e9401e89c7dd21e255c",
+        "split": "valid",
+        "prediction_count": 300,
+        "ground_truth_count": 80,
+        "TP": 56,
+        "FP": 244,
+        "FN": 24
+      },
+      {
+        "image_stem": "frame_30_jpg.rf.cde8aa0069abb461455a936ea48965a9",
+        "split": "valid",
+        "prediction_count": 300,
+        "ground_truth_count": 81,
+        "TP": 72,
+        "FP": 228,
+        "FN": 9
+      },
+      {
+        "image_stem": "frame_52_jpg.rf.e7b90717d78ef692f805ed12dfd3256d",
+        "split": "valid",
+        "prediction_count": 300,
+        "ground_truth_count": 81,
+        "TP": 62,
+        "FP": 238,
+        "FN": 19
+      },
+      {
+        "image_stem": "frame_67_jpg.rf.fb0cf4b7bda2d4b2ed739acbd2328283",
+        "split": "valid",
+        "prediction_count": 300,
+        "ground_truth_count": 84,
+        "TP": 72,
+        "FP": 228,
+        "FN": 12
+      },
+      {
+        "image_stem": "frame_104_jpg.rf.86c46a0d54b4604cd216ac1dd759049d",
+        "split": "test",
+        "prediction_count": 300,
+        "ground_truth_count": 77,
+        "TP": 50,
+        "FP": 250,
+        "FN": 27
+      },
+      {
+        "image_stem": "frame_15_jpg.rf.2249587c24e46c4c1ccb8d9e05756f81",
+        "split": "test",
+        "prediction_count": 300,
+        "ground_truth_count": 78,
+        "TP": 62,
+        "FP": 238,
+        "FN": 16
+      },
+      {
+        "image_stem": "frame_187_jpg.rf.2210d9f0b1b9a03f39886babe41adc1c",
+        "split": "test",
+        "prediction_count": 300,
+        "ground_truth_count": 78,
+        "TP": 73,
+        "FP": 227,
+        "FN": 5
+      },
+      {
+        "image_stem": "frame_22_jpg.rf.323289f8954c66a5b5cbf3e099358e56",
+        "split": "test",
+        "prediction_count": 300,
+        "ground_truth_count": 78,
+        "TP": 65,
+        "FP": 235,
+        "FN": 13
+      },
+      {
+        "image_stem": "frame_72_jpg.rf.ff2468668f7f03adea4416a41b701a47",
+        "split": "test",
+        "prediction_count": 300,
+        "ground_truth_count": 83,
+        "TP": 60,
+        "FP": 240,
+        "FN": 23
+      },
+      {
+        "image_stem": "frame_89_jpg.rf.0cd82271e545680867661379597bdfa9",
+        "split": "test",
+        "prediction_count": 300,
+        "ground_truth_count": 85,
+        "TP": 60,
+        "FP": 240,
+        "FN": 25
+      }
+    ],
+    "note": "Matching is class-aware, greedy, confidence-ranked, one-to-one, with IoU >= 0.50 and no NMS at evaluation time. Duplicate detections are an artifact of this matching rule, not a measured detector property."
+  },
+  "visual_evidence": {
+    "source": "visual_inspection.json and visual_error_summary.json",
+    "inspection_count": 12,
+    "inspection_method": "single_image_visual_inspection",
+    "case_ids": [
+      "VC-01",
+      "VC-02",
+      "VC-03",
+      "VC-04",
+      "VC-05",
+      "VC-06",
+      "VC-07",
+      "VC-08",
+      "VC-09",
+      "VC-10",
+      "VC-11",
+      "VC-12"
+    ],
+    "split_composition": {
+      "valid": 1,
+      "test": 11,
+      "valid_case_id": "VC-09"
+    },
+    "categories": [
+      {
+        "category": "SMALL_OBJECT",
+        "case_count": 12,
+        "case_ids": [
+          "VC-01",
+          "VC-02",
+          "VC-03",
+          "VC-04",
+          "VC-05",
+          "VC-06",
+          "VC-07",
+          "VC-08",
+          "VC-09",
+          "VC-10",
+          "VC-11",
+          "VC-12"
+        ]
+      },
+      {
+        "category": "FALSE_POSITIVE_BACKGROUND",
+        "case_count": 5,
+        "case_ids": [
+          "VC-01",
+          "VC-02",
+          "VC-03",
+          "VC-11",
+          "VC-12"
+        ]
+      },
+      {
+        "category": "LOCALIZATION_ERROR",
+        "case_count": 4,
+        "case_ids": [
+          "VC-02",
+          "VC-04",
+          "VC-05",
+          "VC-06"
+        ]
+      },
+      {
+        "category": "FALSE_NEGATIVE",
+        "case_count": 3,
+        "case_ids": [
+          "VC-04",
+          "VC-05",
+          "VC-06"
+        ]
+      },
+      {
+        "category": "DUPLICATE_DETECTION",
+        "case_count": 2,
+        "case_ids": [
+          "VC-07",
+          "VC-08"
+        ]
+      },
+      {
+        "category": "BORDERLINE_IOU_MATCH",
+        "case_count": 2,
+        "case_ids": [
+          "VC-01",
+          "VC-03"
+        ]
+      },
+      {
+        "category": "LOW_CONFIDENCE",
+        "case_count": 2,
+        "case_ids": [
+          "VC-09",
+          "VC-10"
+        ]
+      },
+      {
+        "category": "CROWDING",
+        "case_count": 1,
+        "case_ids": [
+          "VC-12"
+        ]
+      }
+    ],
+    "class_summary": {
+      "bus": {
+        "case_count": 3,
+        "case_ids": [
+          "VC-01",
+          "VC-02",
+          "VC-03"
+        ]
+      },
+      "truck": {
+        "case_count": 4,
+        "case_ids": [
+          "VC-04",
+          "VC-05",
+          "VC-06",
+          "VC-10"
+        ]
+      },
+      "motorcycle": {
+        "case_count": 4,
+        "case_ids": [
+          "VC-07",
+          "VC-08",
+          "VC-09",
+          "VC-12"
+        ]
+      },
+      "car": {
+        "case_count": 1,
+        "case_ids": [
+          "VC-11"
+        ]
+      }
+    },
+    "evidence_levels": {
+      "observed_facts": "direct visual observations recorded per case",
+      "machine_evidence_summary": "prediction/GT matching evidence for the selected cases (LEVEL B)",
+      "supporting_evidence": "explanatory linkage between machine evidence and visual observation",
+      "uncertainty": "explicitly recorded unresolved questions per case"
+    },
+    "note": "No new visual observations were created. These are the already-recorded categories from the source artifacts."
+  },
+  "evidence_relationships": [
+    {
+      "visual_category": "SMALL_OBJECT",
+      "visual_cases": [
+        "VC-01",
+        "VC-02",
+        "VC-03",
+        "VC-04",
+        "VC-05",
+        "VC-06",
+        "VC-07",
+        "VC-08",
+        "VC-09",
+        "VC-10",
+        "VC-11",
+        "VC-12"
+      ],
+      "support_status": "PARTIALLY_SUPPORTED",
+      "limitation": "The AP@0.5 versus AP@0.5:0.95 gap is consistent with localization weakness but does not prove object size is the cause of any specific prediction. SMALL_OBJECT is recorded as a contributing scene-level difficulty, not a proven cause."
+    },
+    {
+      "visual_category": "FALSE_POSITIVE_BACKGROUND",
+      "visual_cases": [
+        "VC-01",
+        "VC-02",
+        "VC-03",
+        "VC-11",
+        "VC-12"
+      ],
+      "support_status": "PARTIALLY_SUPPORTED",
+      "limitation": "Low precision confirms many false positives at the evaluated operating point but cannot establish that they are background artifacts. The label rests on the annotation set as well as the image."
+    },
+    {
+      "visual_category": "FALSE_NEGATIVE",
+      "visual_cases": [
+        "VC-04",
+        "VC-05",
+        "VC-06"
+      ],
+      "support_status": "PARTIALLY_SUPPORTED",
+      "limitation": "High aggregate recall with residual FN counts is consistent with missed detections but does not prove the three inspected truck cases are representative of the full FN population."
+    },
+    {
+      "visual_category": "DUPLICATE_DETECTION",
+      "visual_cases": [
+        "VC-07",
+        "VC-08"
+      ],
+      "support_status": "NOT_DIRECTLY_SUPPORTED",
+      "limitation": "Aggregate motorcycle FP counts are consistent with repeated detections in dense regions but cannot distinguish duplicates from background false positives. The duplicate classification is a consequence of greedy one-to-one matching, not of box quality."
+    },
+    {
+      "visual_category": "LOCALIZATION_ERROR",
+      "visual_cases": [
+        "VC-02",
+        "VC-04",
+        "VC-05",
+        "VC-06"
+      ],
+      "support_status": "PARTIALLY_SUPPORTED",
+      "limitation": "The AP gap is consistent with localization sensitivity but does not prove localization is the cause of the specific inspected cases or the sole weakness. The IoU shortfall could also reflect small object size."
+    },
+    {
+      "visual_category": "BORDERLINE_IOU_MATCH",
+      "visual_cases": [
+        "VC-01",
+        "VC-03"
+      ],
+      "support_status": "SUPPORTED",
+      "limitation": "Supported by the fixed 0.50 IoU matching threshold. Limited to the threshold dependence of the matching rule, not to detector quality beyond that threshold."
+    },
+    {
+      "visual_category": "LOW_CONFIDENCE",
+      "visual_cases": [
+        "VC-09",
+        "VC-10"
+      ],
+      "support_status": "NOT_DIRECTLY_SUPPORTED",
+      "limitation": "Aggregate precision does not measure per-prediction confidence calibration. No confidence distribution field exists in the baseline summary."
+    },
+    {
+      "visual_category": "CROWDING",
+      "visual_cases": [
+        "VC-12"
+      ],
+      "support_status": "NOT_DIRECTLY_SUPPORTED",
+      "limitation": "No numerical field measures object density or crowding. The high motorcycle FP count is consistent with difficulty in dense regions but does not establish crowding as the cause of the single inspected case."
+    }
+  ],
+  "scientific_interpretation": {
+    "directly_supported_conclusions": [
+      "Baseline recall is substantially higher than precision at the evaluated operating point in both splits (valid recall 0.862 vs precision 0.223; test recall 0.873 vs precision 0.223).",
+      "False positives are numerous in the evaluated baseline (valid 10023 FP vs 2877 TP; test 4897 FP vs 1403 TP).",
+      "False negatives occur across evaluated classes (valid 460 FN; test 204 FN).",
+      "Valid and test aggregate performance are close (valid mAP@0.5 0.681 vs test 0.677; valid mAP@0.5:0.95 0.320 vs test 0.320; valid precision 0.223 vs test 0.223; valid recall 0.862 vs test 0.873).",
+      "The AP@0.5 to AP@0.5:0.95 gap is substantial for every evaluated class in both splits.",
+      "Some visually inspected cases show borderline IoU behavior relative to the 0.50 matching threshold (VC-01 at IoU 0.4718; VC-03 at IoU 0.4582).",
+      "In the inspected cases, visual patterns associated with small objects, localization difficulty, background false positives, duplicate detections, and low-confidence detections were observed."
+    ],
+    "partially_supported_interpretations": [
+      "The large AP@0.5 versus AP@0.5:0.95 gap is partially consistent with localization weakness, but the numerical evidence cannot establish that localization is the sole or primary weakness.",
+      "The low aggregate precision is partially consistent with the presence of many false positives, but the mechanism behind any specific false positive cannot be established.",
+      "The residual false-negative counts are partially consistent with missed detections, but representativeness of the inspected cases cannot be established."
+    ],
+    "unestablished_conclusions": [
+      "It cannot be established that all false positives are duplicate detections.",
+      "It cannot be established that low precision is caused by duplicate detections.",
+      "It cannot be established that every localization error is caused by small objects.",
+      "It cannot be established that the AP gap proves localization is the sole weakness.",
+      "It cannot be established that low confidence is the cause of false positives.",
+      "It cannot be established that crowding is the cause of the observed errors.",
+      "It cannot be established that the visual findings from 12 cases represent the entire dataset statistically.",
+      "It cannot be established that person-class performance is any value.",
+      "It cannot be established that the valid/test difference is statistically significant.",
+      "It cannot be established that generalization failure occurs merely from individual case differences."
+    ]
+  },
+  "limitations": [
+    "Only 12 visual cases were inspected: 1 from valid (VC-09) and 11 from test.",
+    "The visual sample was selected deterministically from matching.json evidence and is an error-analysis sample, not a statistically representative random sample of the dataset.",
+    "Visual findings are case observations and must be described as observed in inspected cases, not as the dataset contains, unless independently supported by full-dataset numerical evidence.",
+    "Aggregate baseline metrics come from the full evaluated valid subset (43 images) and test subset (21 images) and are not a replacement for the 12 inspected cases.",
+    "person has no ground truth in the evaluated valid/test subsets (status no_ground_truth in both splits). No person precision, recall, AP, false-positive, or false-negative conclusion may be inferred, and no_ground_truth must not be reinterpreted as poor performance.",
+    "Visual evidence does not establish dataset-wide prevalence of any error category.",
+    "Causal mechanisms cannot be established where the evidence is insufficient. Aggregate precision, recall, and AP measure detection quality at the evaluated operating point and cannot by themselves establish the mechanism behind any specific false positive or false negative.",
+    "Matching is class-aware greedy confidence-ranked one-to-one with IoU at least 0.50 and no NMS at evaluation time; duplicate detections are an artifact of that matching rule, not a measured detector property."
+  ],
+  "evidence_level_boundary": {
+    "LEVEL_A_full_evaluation": "Metrics calculated from the complete evaluated valid/test subsets (precision, recall, AP@0.5, AP@0.5:0.95, TP, FP, FN, per-class).",
+    "LEVEL_B_targeted_machine": "TP/FP/FN matching and prediction/GT evidence for the 12 selected images, recorded in matching.json and the machine_evidence_summary fields of visual_inspection.json.",
+    "LEVEL_C_direct_visual": "Human/visual inspection observations from the 12 selected cases, recorded in observed_facts and observed_visual_facts fields.",
+    "rule": "These levels must not be merged into one undifferentiated claim. A statement supported only by Level C must not be presented as supported by Level A."
+  }
+}

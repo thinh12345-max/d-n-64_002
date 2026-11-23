@@ -1,0 +1,71 @@
+{
+  "analysis_id": "d03-baseline-10-error-analysis-visual-01",
+  "source_visual_inspection": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/visual_inspection.json",
+  "source_visual_summary": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/visual_error_summary.json",
+  "source_numerical_extract": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/numerical_baseline_extract.json",
+  "visual_to_numerical_mapping": [
+    {
+      "visual_category": "SMALL_OBJECT",
+      "visual_cases": ["VC-01", "VC-02", "VC-03", "VC-04", "VC-05", "VC-06", "VC-07", "VC-08", "VC-09", "VC-10", "VC-11", "VC-12"],
+      "numerical_evidence": "Per-class AP@0.5 is high while AP@0.5:0.95 is markedly lower for every evaluated class (bus 0.857/0.398, car 0.895/0.433, motorcycle 0.847/0.400, truck 0.804/0.369 valid; bus 0.800/0.390, car 0.894/0.423, motorcycle 0.866/0.392, truck 0.825/0.394 test). Overall valid mAP@0.5 0.681 vs mAP@0.5:0.95 0.320; test 0.677 vs 0.320. Valid precision 0.223, recall 0.862; test precision 0.223, recall 0.873.",
+      "support_status": "PARTIALLY_SUPPORTED",
+      "limitation": "The large AP@0.5 versus AP@0.5:0.95 gap is consistent with localization weakness on small/distant objects but does not prove that object size is the cause of any specific prediction. SMALL_OBJECT is recorded in the visual records as a contributing scene-level difficulty, not as a proven cause. The numerical evidence measures aggregate detection quality, not per-object size effects."
+    },
+    {
+      "visual_category": "FALSE_POSITIVE_BACKGROUND",
+      "visual_cases": ["VC-01", "VC-02", "VC-03", "VC-11", "VC-12"],
+      "numerical_evidence": "Overall precision is low: valid 0.223 with 10023 FP vs 2877 TP; test 0.223 with 4897 FP vs 1403 TP. Motorcycle carries the largest FP burden (valid 4700 FP, test 2291 FP).",
+      "support_status": "PARTIALLY_SUPPORTED",
+      "limitation": "Low precision confirms a large number of false positives at the evaluated operating point, but cannot establish that those false positives are background artifacts or border-truncated fragments. The visual records themselves state the FALSE_POSITIVE_BACKGROUND label rests on the annotation set as well as the image."
+    },
+    {
+      "visual_category": "FALSE_NEGATIVE",
+      "visual_cases": ["VC-04", "VC-05", "VC-06"],
+      "numerical_evidence": "Overall recall is high: valid 0.862 with 460 FN; test 0.873 with 204 FN. Truck FN counts are valid 32, test 14. Motorcycle FN counts are valid 297, test 125.",
+      "support_status": "PARTIALLY_SUPPORTED",
+      "limitation": "High aggregate recall with a residual FN count is consistent with some missed detections, but does not prove that the three inspected truck cases are representative of the full FN population. The inspected cases are 11 of 12 from the test split and are not a random sample."
+    },
+    {
+      "visual_category": "DUPLICATE_DETECTION",
+      "visual_cases": ["VC-07", "VC-08"],
+      "numerical_evidence": "Valid motorcycle FP count 4700 vs TP 1642; test motorcycle FP 2291 vs TP 805. Valid motorcycle precision 0.259, test 0.260.",
+      "support_status": "NOT_DIRECTLY_SUPPORTED",
+      "limitation": "A high FP count for motorcycle is consistent with repeated detections in dense regions, but the aggregate metrics cannot distinguish duplicate boxes from genuine background false positives. The visual records explicitly state the duplicate classification is a consequence of greedy one-to-one matching, not of box quality. No numerical field in the baseline measures duplicate rate."
+    },
+    {
+      "visual_category": "LOCALIZATION_ERROR",
+      "visual_cases": ["VC-02", "VC-04", "VC-05", "VC-06"],
+      "numerical_evidence": "AP@0.5 is substantially higher than AP@0.5:0.95 for all classes in both splits. Valid-test AP@0.5 differences are small (bus +0.057, car +0.001, motorcycle -0.019, truck -0.021); AP@0.5:0.95 differences are also small (bus +0.004, car +0.010, motorcycle +0.008, truck -0.024).",
+      "support_status": "PARTIALLY_SUPPORTED",
+      "limitation": "The AP@0.5 versus AP@0.5:0.95 gap is consistent with localization sensitivity but does not prove that localization is the cause of the specific inspected cases, nor that it is the sole cause. The visual records record LOCALIZATION_ERROR as a plausible contributing factor, not a proven cause, and note that the IoU shortfall could also reflect small object size."
+    },
+    {
+      "visual_category": "BORDERLINE_IOU_MATCH",
+      "visual_cases": ["VC-01", "VC-03"],
+      "numerical_evidence": "Matching uses a fixed IoU threshold of 0.50 (recorded in matching.json). The inspected cases report IoU values just below 0.50 (0.4718 and 0.4582).",
+      "support_status": "SUPPORTED",
+      "limitation": "The numerical baseline directly reflects the 0.50 IoU matching threshold at which borderline cases flip between TP and FP/FN. The claim is limited to the threshold dependence of the matching rule and does not imply anything about detector quality beyond that threshold."
+    },
+    {
+      "visual_category": "LOW_CONFIDENCE",
+      "visual_cases": ["VC-09", "VC-10"],
+      "numerical_evidence": "Overall precision at the evaluated operating point is 0.223 in both splits. The evaluated inference parameters record conf 0.001 and max_det 300.",
+      "support_status": "NOT_DIRECTLY_SUPPORTED",
+      "limitation": "Aggregate precision does not measure per-prediction confidence calibration. The baseline summary contains no field that records the confidence distribution of the inspected low-confidence predictions, so the visual claim cannot be linked to a numerical confidence metric."
+    },
+    {
+      "visual_category": "CROWDING",
+      "visual_cases": ["VC-12"],
+      "numerical_evidence": "Valid motorcycle precision 0.259 with 4700 FP; test motorcycle precision 0.260 with 2291 FP. Valid overall precision 0.223, test 0.223.",
+      "support_status": "NOT_DIRECTLY_SUPPORTED",
+      "limitation": "No numerical field in the baseline measures object density or crowding. The high motorcycle FP count is consistent with difficulty in dense regions but does not establish crowding as the cause of the single inspected case."
+    }
+  ],
+  "scope_limitations": [
+    "The visual sample contains 1 valid case (VC-09) and 11 test cases. It is not a statistically representative sample of the full dataset and no representativeness claim is made.",
+    "Aggregate baseline metrics come from the full evaluated valid (43 images) and test (21 images) subsets and are not a replacement for the 12 inspected cases.",
+    "person has no ground truth in the evaluated valid or test subsets (status no_ground_truth in both splits). No person-class performance conclusion may be inferred, and visual observations involving other classes must not be generalized to person detection.",
+    "No causal claim is made between any visual category and detector behavior. Aggregate precision, recall, and AP measure detection quality at the evaluated operating point and cannot by themselves establish the mechanism behind any specific false positive or false negative.",
+    "The matching method is class-aware greedy confidence-ranked one-to-one with IoU at least 0.50 and no NMS at evaluation time; duplicate detections are an artifact of that matching rule, not a measured detector property."
+  ]
+}

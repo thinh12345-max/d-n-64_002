@@ -1,0 +1,77 @@
+{
+  "analysis_id": "d03-baseline-10-error-analysis-visual-01",
+  "source_evaluation_run": "evaluation/outputs/d03-baseline-10-eval-01",
+  "checkpoint": "runs\\detect\\runs\\detect\\d03-baseline-10\\weights\\best.pt",
+  "checkpoint_sha256": "47c2edb8fb91c42f7a1755c00b059daf44947b85f1fc53659c3431bd3b71a024",
+  "dataset": "My-First-Project-4-detection",
+  "dataset_dir": "My-First-Project-4-detection",
+  "selection_method": {
+    "method": "deterministic_even_spacing",
+    "description": "Images within each split are sorted by stable filename (lexicographic) order, then sampled at evenly spaced indices (stride = floor((n-1)/(k-1)) for k targets, with the last index pinned to n-1). No random sampling, no semantic metadata used (per-image class/scene semantics are not available in existing baseline evaluation metadata).",
+    "valid": {
+      "total_available": 43,
+      "stride": 7,
+      "indices": [0, 7, 14, 21, 28, 35]
+    },
+    "test": {
+      "total_available": 21,
+      "stride": 4,
+      "indices": [0, 4, 8, 12, 16, 20]
+    }
+  },
+  "valid_images": [
+    {
+      "index": 0,
+      "path": "My-First-Project-4-detection\\valid\\images\\frame_111_jpg.rf.8a0c48f62a56350ec4ebac3e11526e18.jpg"
+    },
+    {
+      "index": 7,
+      "path": "My-First-Project-4-detection\\valid\\images\\frame_152_jpg.rf.d3bf08d3f75d362b5c7e25a4e4560f8a.jpg"
+    },
+    {
+      "index": 14,
+      "path": "My-First-Project-4-detection\\valid\\images\\frame_195_jpg.rf.a9012cc88e832e9401e89c7dd21e255c.jpg"
+    },
+    {
+      "index": 21,
+      "path": "My-First-Project-4-detection\\valid\\images\\frame_30_jpg.rf.cde8aa0069abb461455a936ea48965a9.jpg"
+    },
+    {
+      "index": 28,
+      "path": "My-First-Project-4-detection\\valid\\images\\frame_52_jpg.rf.e7b90717d78ef692f805ed12dfd3256d.jpg"
+    },
+    {
+      "index": 35,
+      "path": "My-First-Project-4-detection\\valid\\images\\frame_67_jpg.rf.fb0cf4b7bda2d4b2ed739acbd2328283.jpg"
+    }
+  ],
+  "test_images": [
+    {
+      "index": 0,
+      "path": "My-First-Project-4-detection\\test\\images\\frame_104_jpg.rf.86c46a0d54b4604cd216ac1dd759049d.jpg"
+    },
+    {
+      "index": 4,
+      "path": "My-First-Project-4-detection\\test\\images\\frame_15_jpg.rf.2249587c24e46c4c1ccb8d9e05756f81.jpg"
+    },
+    {
+      "index": 8,
+      "path": "My-First-Project-4-detection\\test\\images\\frame_187_jpg.rf.2210d9f0b1b9a03f39886babe41adc1c.jpg"
+    },
+    {
+      "index": 12,
+      "path": "My-First-Project-4-detection\\test\\images\\frame_22_jpg.rf.323289f8954c66a5b5cbf3e099358e56.jpg"
+    },
+    {
+      "index": 16,
+      "path": "My-First-Project-4-detection\\test\\images\\frame_72_jpg.rf.ff2468668f7f03adea4416a41b701a47.jpg"
+    },
+    {
+      "index": 20,
+      "path": "My-First-Project-4-detection\\test\\images\\frame_89_jpg.rf.0cd82271e545680867661379597bdfa9.jpg"
+    }
+  ],
+  "total_image_count": 12,
+  "valid_target_count": 6,
+  "test_target_count": 6
+}

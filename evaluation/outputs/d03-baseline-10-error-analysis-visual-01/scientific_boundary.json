@@ -1,0 +1,56 @@
+{
+  "analysis_id": "d03-baseline-10-error-analysis-visual-01",
+  "allowed_conclusions": [
+    "Baseline recall is substantially higher than precision at the evaluated operating point in both splits (valid recall 0.862 vs precision 0.223; test recall 0.873 vs precision 0.223). This is supported by Level A full-evaluation evidence.",
+    "False positives are numerous in the evaluated baseline (valid 10023 FP vs 2877 TP; test 4897 FP vs 1403 TP). This is supported by Level A full-evaluation evidence.",
+    "False negatives occur across evaluated classes (valid 460 FN; test 204 FN), with residual FN counts in bus, car, motorcycle, and truck in both splits. This is supported by Level A full-evaluation evidence.",
+    "Valid and test aggregate performance are close (valid mAP@0.5 0.681 vs test 0.677; valid mAP@0.5:0.95 0.320 vs test 0.320; valid precision 0.223 vs test 0.223; valid recall 0.862 vs test 0.873). This is supported by Level A full-evaluation evidence.",
+    "The AP@0.5 to AP@0.5:0.95 gap is substantial for every evaluated class in both splits (e.g., bus 0.857 vs 0.398 valid; motorcycle 0.847 vs 0.400 valid; truck 0.804 vs 0.369 valid). This is supported by Level A full-evaluation evidence and is consistent with sensitivity to localization, but the cause of the gap cannot be established from this evidence alone.",
+    "Some visually inspected cases show borderline IoU behavior relative to the 0.50 matching threshold (VC-01 at IoU 0.4718; VC-03 at IoU 0.4582). This is supported by Level B machine evidence and Level C direct visual evidence.",
+    "In the inspected cases, visual patterns associated with small objects (all 12 cases), localization difficulty (VC-02, VC-04, VC-05, VC-06), background false positives (VC-01, VC-02, VC-03, VC-11, VC-12), duplicate detections (VC-07, VC-08), and low-confidence detections (VC-09, VC-10) were observed. This is supported by Level C direct visual evidence only and is limited to the inspected cases."
+  ],
+  "partially_supported_interpretations": [
+    "The large AP@0.5 versus AP@0.5:0.95 gap is partially consistent with localization weakness, but the numerical evidence cannot establish that localization is the sole or primary weakness, nor that it applies to any specific inspected case.",
+    "The low aggregate precision is partially consistent with the presence of many false positives, but the numerical evidence cannot establish the mechanism behind any specific false positive, including whether any are background artifacts or duplicate detections.",
+    "The residual false-negative counts are partially consistent with missed detections, but the numerical evidence cannot establish whether the three inspected truck false-negative cases are representative of the full false-negative population."
+  ],
+  "unsupported_or_unestablished_conclusions": [
+    "It cannot be established that all false positives are duplicate detections. DUPLICATE_DETECTION is NOT_DIRECTLY_SUPPORTED and is recorded in only 2 of 12 inspected cases.",
+    "It cannot be established that low precision is caused by duplicate detections. Aggregate precision does not measure duplicate rate.",
+    "It cannot be established that every localization error is caused by small objects. LOCALIZATION_ERROR is PARTIALLY_SUPPORTED and the inspected records state the IoU shortfall could also reflect small object size.",
+    "It cannot be established that the AP gap proves localization is the sole weakness. The gap is consistent with multiple possible contributing factors.",
+    "It cannot be established that low confidence is the cause of false positives. LOW_CONFIDENCE is NOT_DIRECTLY_SUPPORTED; no confidence distribution field exists in the baseline summary.",
+    "It cannot be established that crowding is the cause of the observed errors. CROWDING is NOT_DIRECTLY_SUPPORTED and is recorded in only 1 inspected case.",
+    "It cannot be established that the visual findings from 12 cases represent the entire dataset statistically. The sample is deterministic and is not a random sample.",
+    "It cannot be established that person-class performance is any value. person has no ground truth in the evaluated valid/test subsets (status no_ground_truth in both splits).",
+    "It cannot be established that the valid/test difference is statistically significant. No statistical test was performed and the difference is small in absolute terms.",
+    "It cannot be established that generalization failure occurs merely from individual case differences."
+  ],
+  "sample_scope_boundary": {
+    "visual_cases_inspected": 12,
+    "valid_cases": 1,
+    "test_cases": 11,
+    "valid_case_id": "VC-09",
+    "selection_method": "deterministic, selected from matching.json evidence",
+    "representativeness": "error-analysis sample, not a statistically representative random sample of the dataset",
+    "language_rule": "Visual findings must be described as 'observed in inspected cases' and must not be described as 'the dataset contains' unless the statement is independently supported by full-dataset numerical evidence.",
+    "baseline_coverage": "Aggregate baseline metrics come from the full evaluated valid subset (43 images) and test subset (21 images) and are not a replacement for the 12 inspected cases."
+  },
+  "evidence_level_boundary": {
+    "LEVEL_A_full_evaluation": "Metrics calculated from the complete evaluated valid/test subsets (precision, recall, AP@0.5, AP@0.5:0.95, TP, FP, FN, per-class).",
+    "LEVEL_B_targeted_machine": "TP/FP/FN matching and prediction/GT evidence for the 12 selected images, recorded in matching.json and the machine_evidence_summary fields of visual_inspection.json.",
+    "LEVEL_C_direct_visual": "Human/visual inspection observations from the 12 selected cases, recorded in observed_facts and observed_visual_facts fields.",
+    "rule": "These levels must not be merged into one undifferentiated claim. A statement supported only by Level C must not be presented as supported by Level A."
+  },
+  "causal_language_boundary": {
+    "allowed_phrases": ["is consistent with", "suggests", "was observed in", "is supported by", "is partially supported by", "cannot be established from the current evidence"],
+    "prohibited_phrases": ["causes", "proves", "is responsible for", "results from"],
+    "rule": "Causal language may be used only where the existing evidence directly establishes causality. No such direct causal establishment exists in the current D-03 evidence."
+  },
+  "person_class_boundary": {
+    "person_ground_truth": "none in valid; none in test",
+    "person_status": "no_ground_truth in both splits",
+    "cannot_be_established": ["person precision", "person recall", "person AP", "person false-positive behavior", "person false-negative behavior"],
+    "rule": "no_ground_truth must not be reinterpreted as poor person-class performance. Visual observations involving other classes must not be generalized to person detection."
+  }
+}

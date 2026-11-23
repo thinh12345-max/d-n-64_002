@@ -1,0 +1,646 @@
+{
+  "analysis_id": "d03-baseline-10-error-analysis-visual-01",
+  "scope": "EXTRACTION ONLY. Paper-ready findings distilled from the frozen D-03 baseline evaluation and visual error analysis. No new evidence, no new interpretations, no causal claims, no recommendations, no hypotheses, no new experiments, no inference, no retraining, no baseline rerun, no image pixels inspected.",
+  "evidence_levels": {
+    "LEVEL_A": "Full-subset numerical metrics over the complete evaluated valid/test subsets.",
+    "LEVEL_B": "Machine matching evidence (TP/FP/FN) for the 12 selected images.",
+    "LEVEL_C": "Direct visual inspection observations for the same 12 cases.",
+    "rule": "Levels are not interchangeable. A statement supported only by Level C must not be presented as supported by Level A."
+  },
+  "overall_findings": [
+    {
+      "id": "OV-01",
+      "finding": "At the evaluated operating point, recall is substantially higher than precision in both evaluated splits.",
+      "values": {
+        "valid": {
+          "recall": 0.862152,
+          "precision": 0.223023
+        },
+        "test": {
+          "recall": 0.873055,
+          "precision": 0.222698
+        }
+      },
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json",
+      "interpretation": "observation only"
+    },
+    {
+      "id": "OV-02",
+      "finding": "False positives are numerous relative to true positives in both evaluated splits.",
+      "values": {
+        "valid": {
+          "total_tp": 2877,
+          "total_fp": 10023
+        },
+        "test": {
+          "total_tp": 1403,
+          "total_fp": 4897
+        }
+      },
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json",
+      "interpretation": "observation only"
+    },
+    {
+      "id": "OV-03",
+      "finding": "False negatives occur across the evaluated classes in both splits.",
+      "values": {
+        "valid": {
+          "total_fn": 460
+        },
+        "test": {
+          "total_fn": 204
+        }
+      },
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json",
+      "interpretation": "observation only"
+    },
+    {
+      "id": "OV-04",
+      "finding": "Valid and test aggregate performance are close on all four overall metrics.",
+      "values": {
+        "valid": {
+          "map_0.5": 0.680575,
+          "map_0.5_0.95": 0.319892,
+          "precision": 0.223023,
+          "recall": 0.862152
+        },
+        "test": {
+          "map_0.5": 0.676974,
+          "map_0.5_0.95": 0.319613,
+          "precision": 0.222698,
+          "recall": 0.873055
+        },
+        "valid_minus_test_diff": {
+          "map_0.5": 0.003601,
+          "map_0.5_0.95": 0.000279,
+          "precision": 0.000325,
+          "recall": -0.010903
+        }
+      },
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json",
+      "interpretation": "observation only; no statistical significance test was performed and the differences are small in absolute terms",
+      "limitation": "valid/test difference cannot be established as statistically significant"
+    },
+    {
+      "id": "OV-05",
+      "finding": "The gap between average precision at IoU 0.50 and average precision over IoU 0.50-0.95 is substantial for every evaluated class in both splits.",
+      "values": {
+        "valid": {
+          "bus": {
+            "ap05": 0.857143,
+            "ap50_95": 0.397619
+          },
+          "car": {
+            "ap05": 0.895222,
+            "ap50_95": 0.432775
+          },
+          "motorcycle": {
+            "ap05": 0.846828,
+            "ap50_95": 0.399742
+          },
+          "truck": {
+            "ap05": 0.803681,
+            "ap50_95": 0.369325
+          }
+        },
+        "test": {
+          "bus": {
+            "ap05": 0.8,
+            "ap50_95": 0.39
+          },
+          "car": {
+            "ap05": 0.894281,
+            "ap50_95": 0.422704
+          },
+          "motorcycle": {
+            "ap05": 0.865591,
+            "ap50_95": 0.391613
+          },
+          "truck": {
+            "ap05": 0.825,
+            "ap50_95": 0.39375
+          }
+        }
+      },
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json",
+      "interpretation": "PARTIALLY_SUPPORTED",
+      "limitation": "The gap is partially consistent with localization weakness, but the numerical evidence cannot establish that localization is the sole or primary weakness, nor that it applies to any specific inspected case"
+    }
+  ],
+  "valid_test_findings": [
+    {
+      "id": "VT-01",
+      "finding": "The evaluated validation subset contains 43 images with 3337 ground-truth objects and 12900 predictions.",
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json"
+    },
+    {
+      "id": "VT-02",
+      "finding": "The evaluated test subset contains 21 images with 1607 ground-truth objects and 6300 predictions.",
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json"
+    },
+    {
+      "id": "VT-03",
+      "finding": "Per-class average precision at IoU 0.50 for validation and test respectively: bus 0.857143 / 0.800000; car 0.895222 / 0.894281; motorcycle 0.846828 / 0.865591; truck 0.803681 / 0.825000.",
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json"
+    },
+    {
+      "id": "VT-04",
+      "finding": "The visual error-analysis sample consists of 12 inspected cases (VC-01 through VC-12), of which one case (VC-09) originates from the validation split and eleven from the test split.",
+      "evidence_level": "LEVEL_B",
+      "source": "evidence_integration.json"
+    },
+    {
+      "id": "VT-05",
+      "finding": "The 12 selected images were matched using a class-aware, greedy, confidence-ranked, one-to-one matching procedure with an IoU threshold of 0.50 and no non-maximum suppression at evaluation time.",
+      "evidence_level": "LEVEL_B",
+      "source": "evidence_integration.json"
+    },
+    {
+      "id": "VT-06",
+      "finding": "Aggregate matching totals for the 12 selected images are 781 true positives, 2819 false positives, and 182 false negatives.",
+      "values": {
+        "TP": 781,
+        "FP": 2819,
+        "FN": 182
+      },
+      "evidence_level": "LEVEL_B",
+      "source": "evidence_integration.json"
+    },
+    {
+      "id": "VT-07",
+      "finding": "Duplicate detections recorded in the visual cases are an artefact of the greedy one-to-one matching rule, not a measured property of the detector.",
+      "evidence_level": "LEVEL_B",
+      "source": "scientific_boundary.json"
+    }
+  ],
+  "per_class_findings": [
+    {
+      "id": "PC-01",
+      "class": "bus",
+      "finding": "Bus average precision at IoU 0.50: 0.857143 (valid) / 0.800000 (test); AP@0.5:0.95: 0.397619 (valid) / 0.39 (test).",
+      "values": {
+        "valid": {
+          "gt": 42,
+          "predictions": 227,
+          "tp": 36,
+          "fp": 191,
+          "fn": 6,
+          "precision": 0.15859,
+          "recall": 0.857143,
+          "ap05": 0.857143,
+          "ap50_95": 0.397619
+        },
+        "test": {
+          "gt": 20,
+          "predictions": 112,
+          "tp": 16,
+          "fp": 96,
+          "fn": 4,
+          "precision": 0.142857,
+          "recall": 0.8,
+          "ap05": 0.8,
+          "ap50_95": 0.39
+        }
+      },
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json"
+    },
+    {
+      "id": "PC-02",
+      "class": "car",
+      "finding": "Car average precision at IoU 0.50: 0.895222 (valid) / 0.894281 (test); AP@0.5:0.95: 0.432775 (valid) / 0.422704 (test).",
+      "values": {
+        "valid": {
+          "gt": 1193,
+          "predictions": 5616,
+          "tp": 1068,
+          "fp": 4548,
+          "fn": 125,
+          "precision": 0.190171,
+          "recall": 0.895222,
+          "ap05": 0.895222,
+          "ap50_95": 0.432775
+        },
+        "test": {
+          "gt": 577,
+          "predictions": 2713,
+          "tp": 516,
+          "fp": 2197,
+          "fn": 61,
+          "precision": 0.190195,
+          "recall": 0.894281,
+          "ap05": 0.894281,
+          "ap50_95": 0.422704
+        }
+      },
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json"
+    },
+    {
+      "id": "PC-03",
+      "class": "motorcycle",
+      "finding": "Motorcycle average precision at IoU 0.50: 0.846828 (valid) / 0.865591 (test); AP@0.5:0.95: 0.399742 (valid) / 0.391613 (test).",
+      "values": {
+        "valid": {
+          "gt": 1939,
+          "predictions": 6342,
+          "tp": 1642,
+          "fp": 4700,
+          "fn": 297,
+          "precision": 0.258909,
+          "recall": 0.846828,
+          "ap05": 0.846828,
+          "ap50_95": 0.399742
+        },
+        "test": {
+          "gt": 930,
+          "predictions": 3096,
+          "tp": 805,
+          "fp": 2291,
+          "fn": 125,
+          "precision": 0.260013,
+          "recall": 0.865591,
+          "ap05": 0.865591,
+          "ap50_95": 0.391613
+        }
+      },
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json"
+    },
+    {
+      "id": "PC-04",
+      "class": "truck",
+      "finding": "Truck average precision at IoU 0.50: 0.803681 (valid) / 0.825000 (test); AP@0.5:0.95: 0.369325 (valid) / 0.39375 (test).",
+      "values": {
+        "valid": {
+          "gt": 163,
+          "predictions": 715,
+          "tp": 131,
+          "fp": 584,
+          "fn": 32,
+          "precision": 0.183217,
+          "recall": 0.803681,
+          "ap05": 0.803681,
+          "ap50_95": 0.369325
+        },
+        "test": {
+          "gt": 80,
+          "predictions": 379,
+          "tp": 66,
+          "fp": 313,
+          "fn": 14,
+          "precision": 0.174142,
+          "recall": 0.825,
+          "ap05": 0.825,
+          "ap50_95": 0.39375
+        }
+      },
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json"
+    },
+    {
+      "id": "PC-05",
+      "class": "person",
+      "finding": "The person class has no ground truth in either the validation or the test split (status no_ground_truth in both). No person precision, recall, average precision, false-positive, or false-negative conclusion may be inferred.",
+      "values": {
+        "valid": {
+          "gt": 0,
+          "predictions": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "status": "no_ground_truth"
+        },
+        "test": {
+          "gt": 0,
+          "predictions": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "status": "no_ground_truth"
+        }
+      },
+      "evidence_level": "LEVEL_A",
+      "source": "numerical_baseline_extract.json",
+      "limitation": "no_ground_truth must not be reinterpreted as poor person-class performance; person-class performance cannot be established"
+    },
+    {
+      "id": "PC-06",
+      "class": "person",
+      "finding": "Visual case distribution by class in the 12 inspected cases: bus 3 (VC-01, VC-02, VC-03); truck 4 (VC-04, VC-05, VC-06, VC-10); motorcycle 4 (VC-07, VC-08, VC-09, VC-12); car 1 (VC-11).",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json",
+      "limitation": "Observations limited to the 12 inspected cases; not representative of the full dataset"
+    }
+  ],
+  "error_pattern_findings": [
+    {
+      "id": "EP-01",
+      "category": "SMALL_OBJECT",
+      "finding": "Patterns associated with small objects were observed in all 12 inspected cases.",
+      "case_ids": [
+        "VC-01",
+        "VC-02",
+        "VC-03",
+        "VC-04",
+        "VC-05",
+        "VC-06",
+        "VC-07",
+        "VC-08",
+        "VC-09",
+        "VC-10",
+        "VC-11",
+        "VC-12"
+      ],
+      "case_count": 12,
+      "support_status": "PARTIALLY_SUPPORTED",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json",
+      "limitation": "Recorded as a contributing scene-level difficulty, not a proven cause. The AP@0.5 versus AP@0.5:0.95 gap is consistent with localization weakness but does not prove object size is the cause of any specific prediction."
+    },
+    {
+      "id": "EP-02",
+      "category": "FALSE_POSITIVE_BACKGROUND",
+      "finding": "Background false positives were observed in VC-01, VC-02, VC-03, VC-11, and VC-12.",
+      "case_ids": [
+        "VC-01",
+        "VC-02",
+        "VC-03",
+        "VC-11",
+        "VC-12"
+      ],
+      "case_count": 5,
+      "support_status": "PARTIALLY_SUPPORTED",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json",
+      "limitation": "Low precision confirms many false positives at the evaluated operating point but cannot establish that they are background artifacts. The label rests on the annotation set as well as the image."
+    },
+    {
+      "id": "EP-03",
+      "category": "LOCALIZATION_ERROR",
+      "finding": "Localization difficulty was observed in VC-02, VC-04, VC-05, and VC-06.",
+      "case_ids": [
+        "VC-02",
+        "VC-04",
+        "VC-05",
+        "VC-06"
+      ],
+      "case_count": 4,
+      "support_status": "PARTIALLY_SUPPORTED",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json",
+      "limitation": "The AP gap is consistent with localization sensitivity but does not prove localization is the cause of the specific inspected cases or the sole weakness. The IoU shortfall could also reflect small object size."
+    },
+    {
+      "id": "EP-04",
+      "category": "FALSE_NEGATIVE",
+      "finding": "False negatives were observed in VC-04, VC-05, and VC-06.",
+      "case_ids": [
+        "VC-04",
+        "VC-05",
+        "VC-06"
+      ],
+      "case_count": 3,
+      "support_status": "PARTIALLY_SUPPORTED",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json",
+      "limitation": "High aggregate recall with residual FN counts is consistent with missed detections but does not prove the three inspected truck cases are representative of the full FN population."
+    },
+    {
+      "id": "EP-05",
+      "category": "DUPLICATE_DETECTION",
+      "finding": "Duplicate detections were observed in VC-07 and VC-08.",
+      "case_ids": [
+        "VC-07",
+        "VC-08"
+      ],
+      "case_count": 2,
+      "support_status": "NOT_DIRECTLY_SUPPORTED",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json",
+      "limitation": "Aggregate motorcycle FP counts are consistent with repeated detections in dense regions but cannot distinguish duplicates from background false positives. The duplicate classification is a consequence of greedy one-to-one matching, not of box quality."
+    },
+    {
+      "id": "EP-06",
+      "category": "LOW_CONFIDENCE",
+      "finding": "Low-confidence detections were observed in VC-09 and VC-10.",
+      "case_ids": [
+        "VC-09",
+        "VC-10"
+      ],
+      "case_count": 2,
+      "support_status": "NOT_DIRECTLY_SUPPORTED",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json",
+      "limitation": "Aggregate precision does not measure per-prediction confidence calibration. No confidence distribution field exists in the baseline summary."
+    },
+    {
+      "id": "EP-07",
+      "category": "CROWDING",
+      "finding": "Crowding was observed in VC-12.",
+      "case_ids": [
+        "VC-12"
+      ],
+      "case_count": 1,
+      "support_status": "NOT_DIRECTLY_SUPPORTED",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json",
+      "limitation": "No numerical field measures object density or crowding. The high motorcycle FP count is consistent with difficulty in dense regions but does not establish crowding as the cause of the single inspected case."
+    },
+    {
+      "id": "EP-08",
+      "category": "BORDERLINE_IOU_MATCH",
+      "finding": "Borderline IoU behaviour relative to the 0.50 matching threshold was observed in VC-01 (IoU 0.4718) and VC-03 (IoU 0.4582).",
+      "case_ids": [
+        "VC-01",
+        "VC-03"
+      ],
+      "case_count": 2,
+      "support_status": "SUPPORTED",
+      "evidence_level": "LEVEL_B",
+      "source": "evidence_integration.json",
+      "limitation": "Supported by the fixed 0.50 IoU matching threshold. Limited to the threshold dependence of the matching rule, not to detector quality beyond that threshold."
+    }
+  ],
+  "visual_evidence_findings": [
+    {
+      "id": "VE-01",
+      "finding": "Single-image visual inspection records exist for 12 cases (VC-01 through VC-12); one from the validation split (VC-09) and eleven from the test split.",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json"
+    },
+    {
+      "id": "VE-02",
+      "finding": "No new visual observations were created during evidence integration; the categories are those already recorded in the source artifacts.",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json"
+    },
+    {
+      "id": "VE-03",
+      "finding": "The BORDERLINE_IOU_MATCH category is the only visual category with full support (SUPPORTED); all other categories are PARTIALLY_SUPPORTED or NOT_DIRECTLY_SUPPORTED.",
+      "evidence_level": "LEVEL_C",
+      "source": "evidence_integration.json"
+    },
+    {
+      "id": "VE-04",
+      "finding": "The 12-case sample is a deterministic error-analysis sample selected from matching evidence, not a statistically representative random sample of the dataset.",
+      "evidence_level": "LEVEL_C",
+      "source": "scientific_boundary.json"
+    },
+    {
+      "id": "VE-05",
+      "finding": "Visual findings are observations made in the inspected cases and must not be described as what the dataset as a whole contains unless independently supported by full-subset numerical evidence.",
+      "evidence_level": "LEVEL_C",
+      "source": "scientific_boundary.json"
+    }
+  ],
+  "evidence_strength": {
+    "supported_categories": [
+      {
+        "category": "BORDERLINE_IOU_MATCH",
+        "status": "SUPPORTED",
+        "basis": "Rests on the fixed 0.50 IoU matching threshold. VC-01 IoU 0.4718; VC-03 IoU 0.4582.",
+        "evidence_levels": [
+          "LEVEL_B",
+          "LEVEL_C"
+        ]
+      }
+    ],
+    "partially_supported_categories": [
+      {
+        "category": "SMALL_OBJECT",
+        "status": "PARTIALLY_SUPPORTED"
+      },
+      {
+        "category": "FALSE_POSITIVE_BACKGROUND",
+        "status": "PARTIALLY_SUPPORTED"
+      },
+      {
+        "category": "LOCALIZATION_ERROR",
+        "status": "PARTIALLY_SUPPORTED"
+      },
+      {
+        "category": "FALSE_NEGATIVE",
+        "status": "PARTIALLY_SUPPORTED"
+      }
+    ],
+    "not_directly_supported_categories": [
+      {
+        "category": "DUPLICATE_DETECTION",
+        "status": "NOT_DIRECTLY_SUPPORTED"
+      },
+      {
+        "category": "LOW_CONFIDENCE",
+        "status": "NOT_DIRECTLY_SUPPORTED"
+      },
+      {
+        "category": "CROWDING",
+        "status": "NOT_DIRECTLY_SUPPORTED"
+      }
+    ],
+    "rule": "PARTIALLY_SUPPORTED remains PARTIALLY_SUPPORTED and NOT_DIRECTLY_SUPPORTED remains NOT_DIRECTLY_SUPPORTED. No category was upgraded to SUPPORTED."
+  },
+  "scientific_limitations": [
+    {
+      "id": "SL-01",
+      "limitation": "Limited visual sample size. Only 12 visual cases were inspected, one from the validation split (VC-09) and eleven from the test split. The sample was selected deterministically from matching evidence and is an error-analysis sample, not a statistically representative random sample of the dataset.",
+      "source": "scientific_boundary.json"
+    },
+    {
+      "id": "SL-02",
+      "limitation": "Visual findings are described as observed in the inspected cases and must not be described as what the dataset contains unless independently supported by full-subset numerical evidence.",
+      "source": "scientific_boundary.json"
+    },
+    {
+      "id": "SL-03",
+      "limitation": "Visual evidence does not establish dataset-wide prevalence of any error category.",
+      "source": "scientific_boundary.json"
+    },
+    {
+      "id": "SL-04",
+      "limitation": "Person-class evaluation limitation. The person class has no ground truth in the evaluated validation and test subsets (status no_ground_truth in both splits). No person precision, recall, average precision, false-positive, or false-negative conclusion may be inferred, and the no_ground_truth status must not be reinterpreted as poor person-class performance.",
+      "source": "scientific_boundary.json"
+    },
+    {
+      "id": "SL-05",
+      "limitation": "Absence of prediction-level confidence information. No confidence distribution field exists in the baseline summary, so per-prediction confidence cannot be measured or compared.",
+      "source": "scientific_boundary.json"
+    },
+    {
+      "id": "SL-06",
+      "limitation": "Uncertainty of causal attribution. Causal mechanisms cannot be established where the evidence is insufficient. Aggregate precision, recall, and average precision measure detection quality at the evaluated operating point and cannot by themselves establish the mechanism behind any specific false positive or false negative.",
+      "source": "scientific_boundary.json"
+    },
+    {
+      "id": "SL-07",
+      "limitation": "Duplicate detections recorded in the visual cases are an artefact of the greedy one-to-one matching rule, not a measured detector property.",
+      "source": "scientific_boundary.json"
+    },
+    {
+      "id": "SL-08",
+      "limitation": "The valid/test difference cannot be established as statistically significant, because no statistical test was performed and the difference is small in absolute terms.",
+      "source": "scientific_boundary.json"
+    },
+    {
+      "id": "SL-09",
+      "limitation": "No generalization failure can be concluded from individual case differences.",
+      "source": "scientific_boundary.json"
+    },
+    {
+      "id": "SL-10",
+      "limitation": "Model architecture, training procedure, hardware, and hyperparameters are not established by the selected source artifacts and are therefore not reported.",
+      "source": "evidence_integration.json"
+    }
+  ],
+  "source_traceability": {
+    "authoritative_sources": [
+      {
+        "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/research_report.md",
+        "role": "Full D-03 report; narrative synthesis of the evidence layers."
+      },
+      {
+        "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_integration.json",
+        "role": "Integrated evidence relationships, support states, machine error evidence, and visual evidence aggregation (LEVEL B and LEVEL C authoritative)."
+      },
+      {
+        "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/scientific_boundary.json",
+        "role": "Authoritative interpretation constraints, evidence-level boundary, causal-language boundary, person-class boundary, and sample-scope boundary."
+      },
+      {
+        "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/numerical_baseline_extract.json",
+        "role": "Authoritative full valid/test numerical baseline (LEVEL A)."
+      }
+    ],
+    "supporting_sources": [
+      {
+        "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/matching.json",
+        "role": "Authoritative 12-image TP/FP/FN machine matching evidence (LEVEL B)."
+      },
+      {
+        "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/visual_inspection.json",
+        "role": "Authoritative 12-case visual inspection records (LEVEL C)."
+      },
+      {
+        "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/visual_error_summary.json",
+        "role": "Aggregated visual error categories and uncertainty summary."
+      },
+      {
+        "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/evidence_mapping.json",
+        "role": "Visual-to-numerical support status for each category."
+      },
+      {
+        "artifact": "evaluation/outputs/d03-baseline-10-error-analysis-visual-01/final_integrity_validation.json",
+        "role": "Integrity audit confirming artifact existence and that no protected file was modified."
+      }
+    ],
+    "extraction_note": "All numerical values are copied verbatim from numerical_baseline_extract.json and evidence_integration.json. No value was computed, derived, or inferred. No source artifact was modified by this extraction."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "audit_id": "D-03-RESEARCH-REPORT-02G-R1",
+  "audit_scope": "Final read-only audit of the completed merged D-03 research report. No modification, no rewrite, no new analysis.",
+  "structure_check": {
+    "status": "PASS",
+    "sections_present": 12,
+    "section_sequence": "1 through 12 in order, each exactly once",
+    "unexpected_sections_found": false,
+    "readable_markdown": true,
+    "notes": "Sections 1-12 are present exactly once in the correct order. No section 13+ exists. The document is readable Markdown."
+  },
+  "numerical_consistency_check": {
+    "status": "PASS",
+    "values_match_evidence_integration": true,
+    "no_new_calculations": true,
+    "no_replacement_values": true,
+    "notes": "All numerical claims in the report (valid/test overall metrics, per-class AP, valid-minus-test differences, TP/FP/FN totals, and borderline IoU values 0.4718/0.4582) match evidence_integration.json exactly. No new statistics were computed."
+  },
+  "evidence_traceability_check": {
+    "status": "PASS",
+    "findings_supported_by_evidence_chain": true,
+    "no_additional_artifacts_read": true,
+    "notes": "Substantive findings are traceable to the numerical baseline (Level A), matching evidence (Level B), and visual inspection evidence (Level C), as recorded in evidence_integration.json and scientific_boundary.json. The Level A/B/C distinction is applied consistently throughout."
+  },
+  "scientific_boundary_check": {
+    "status": "PASS",
+    "unsupported_causal_claims_found": false,
+    "root_cause_claim_found": false,
+    "statistical_significance_claim_found": false,
+    "generalization_failure_claim_found": false,
+    "visual_sample_representativeness_claim_found": false,
+    "person_class_overinterpretation_found": false,
+    "partially_supported_interpretation_converted_to_fact_found": false,
+    "unsupported_recommendations_found": false,
+    "future_experiments_presented_as_established_found": false,
+    "notes": "The report consistently uses cautious language ('is consistent with', 'cannot be established', 'was observed'). All forbidden affirmative uses of 'proves', 'caused by', 'root cause', 'because the model', 'statistically significant', 'generalization failure', and 'representative of the whole dataset' appear only inside negation statements describing what cannot be established. The person-class no_ground_truth limitation is preserved."
+  },
+  "internal_consistency_check": {
+    "status": "PASS",
+    "valid_test_performance_consistent": true,
+    "visual_error_patterns_consistent": true,
+    "evidence_levels_consistent": true,
+    "person_class_limitation_consistent": true,
+    "visual_sample_scope_consistent": true,
+    "causal_limitations_consistent": true,
+    "unresolved_explanations_consistent": true,
+    "notes": "No contradictions across sections. The same numerical values, the same eight visual categories with the same support states, and the same limitation statements recur consistently in Sections 5, 6, 7, 8, 9, 10, and 11."
+  },
+  "report_scope_check": {
+    "status": "PASS",
+    "remains_d03_baseline_error_analysis": true,
+    "no_model_redesign": true,
+    "no_retraining_content": true,
+    "no_dataset_modification_content": true,
+    "no_traffic_control_recommendations": true,
+    "no_production_deployment_claims": true,
+    "no_real_time_system_conclusions": true,
+    "no_recommendations_or_future_experiments": true,
+    "notes": "The document remains strictly a D-03 baseline evaluation and visual error-analysis report. Section 12 explicitly records that no specific next-stage action is established. No redesign, retraining, dataset, protocol, deployment, or recommendation content was introduced."
+  },
+  "overall_status": "PASS",
+  "issues": [
+    {
+      "severity": "MINOR",
+      "type": "merge_formatting_artifact",
+      "description": "The four fragments lack trailing newlines, so the fragment title lines ('# D-03 Baseline Evaluation and Visual Error Analysis — Report Sections 4-6', '...Sections 7-9', '...Sections 10-12') are glued onto the end of the preceding paragraph at lines 27, 64, and 94 of research_report.md. The first fragment's title line remains at line 1.",
+      "impact": "Cosmetic only. No content, numerical value, section title, evidence level, or scientific boundary was changed. Sections 1-12 remain present exactly once in the correct order, and the glued fragment titles are not additional report sections.",
+      "action_taken": "None. Per audit rules, no fix was applied."
+    }
+  ]
+}

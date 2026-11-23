@@ -1,0 +1,1860 @@
+{
+    "global_identities": [
+        {
+            "global_id": "G001",
+            "provisional": false,
+            "track_segments": [
+                {
+                    "track_id": 9,
+                    "start_frame": 19,
+                    "end_frame": 152
+                },
+                {
+                    "track_id": 23,
+                    "start_frame": 165,
+                    "end_frame": 210
+                },
+                {
+                    "track_id": 30,
+                    "start_frame": 212,
+                    "end_frame": 258
+                }
+            ]
+        },
+        {
+            "global_id": "G002",
+            "provisional": false,
+            "track_segments": [
+                {
+                    "track_id": 12,
+                    "start_frame": 127,
+                    "end_frame": 137
+                },
+                {
+                    "track_id": 14,
+                    "start_frame": 140,
+                    "end_frame": 141
+                },
+                {
+                    "track_id": 16,
+                    "start_frame": 143,
+                    "end_frame": 169
+                }
+            ]
+        },
+        {
+            "global_id": "G003",
+            "provisional": false,
+            "track_segments": [
+                {
+                    "track_id": 48,
+                    "start_frame": 264,
+                    "end_frame": 280
+                },
+                {
+                    "track_id": 58,
+                    "start_frame": 275,
+                    "end_frame": 277
+                },
+                {
+                    "track_id": 75,
+                    "start_frame": 285,
+                    "end_frame": 348
+                },
+                {
+                    "track_id": 90,
+                    "start_frame": 300,
+                    "end_frame": 621
+                },
+                {
+                    "track_id": 91,
+                    "start_frame": 348,
+                    "end_frame": 352
+                },
+                {
+                    "track_id": 95,
+                    "start_frame": 358,
+                    "end_frame": 362
+                },
+                {
+                    "track_id": 97,
+                    "start_frame": 365,
+                    "end_frame": 381
+                }
+            ]
+        },
+        {
+            "global_id": "G004",
+            "provisional": true,
+            "track_segments": [
+                {
+                    "track_id": 1,
+                    "start_frame": 1,
+                    "end_frame": 621
+                }
+            ]
+        },
+        {
+            "global_id": "G005",
+            "provisional": true,
+            "track_segments": [
+                {
+                    "track_id": 2,
+                    "start_frame": 1,
+                    "end_frame": 621
+                }
+            ]
+        },
+        {
+            "global_id": "G006",
+            "provisional": true,
+            "track_segments": [
+                {
+                    "track_id": 3,
+                    "start_frame": 1,
+                    "end_frame": 621
+                }
+            ]
+        },
+        {
+            "global_id": "G007",
+            "provisional": false,
+            "track_segments": [
+                {
+                    "track_id": 4,
+                    "start_frame": 1,
+                    "end_frame": 29
+                }
+            ]
+        },
+        {
+            "global_id": "G008",
+            "provisional": true,
+            "track_segments": [
+                {
+                    "track_id": 5,
+                    "start_frame": 1,
+                    "end_frame": 621
+                }
+            ]
+        },
+        {
+            "global_id": "G009",
+            "provisional": true,
+            "track_segments": [
+                {
+                    "track_id": 6,
+                    "start_frame": 1,
+                    "end_frame": 621
+                }
+            ]
+        },
+        {
+            "global_id": "G010",
+            "provisional": false,
+            "track_segments": [
+                {
+                    "track_id": 7,
+                    "start_frame": 1,
+                    "end_frame": 163
+                }
+            ]
+        },
+        {
+            "global_id": "G011",
+            "provisional": false,
+            "track_segments": [
+                {
+                    "track_id": 8,
+                    "start_frame": 1,
+                    "end_frame": 163
+                }
+            ]
+        },
+        {
+            "global_id": "G012",
+            "provisional": false,
+            "track_segments": [
+                {
+                    "track_id": 29,
+                    "start_frame": 209,
+                    "end_frame": 621
+                }
+            ]
+        },
+        {
+            "global_id": "G013",
+            "provisional": false,
+            "track_segments": [
+                {
+                    "track_id": 31,
+                    "start_frame": 221,
+                    "end_frame": 289
+                }
+            ]
+        },
+        {
+            "global_id": "G014",
+            "provisional": false,
+            "track_segments": [
+                {
+                    "track_id": 32,
+                    "start_frame": 226,
+                    "end_frame": 226
+                }
+            ]
+        },
+        {
+            "global_id": "G015",
+            "provisional": false,
+            "track_segments": [
+                {
+                    "track_id": 137,
+                    "start_frame": 531,
+                    "end_frame": 573
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "previous_track_id": 4,
+            "current_track_id": 12,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 98 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 98,
+                "spatial_distance": 1044.0460957256628,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 14,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 111 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 111,
+                "spatial_distance": 744.7714414503284,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 16,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 114 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 114,
+                "spatial_distance": 684.2696836774226,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 23,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 136 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 136,
+                "spatial_distance": 843.6000237079181,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 29,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 180 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 180,
+                "spatial_distance": 757.1441408344913,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 30,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 183 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 183,
+                "spatial_distance": 1125.994782403542,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 31,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 192 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 192,
+                "spatial_distance": 356.1856959508621,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 32,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 197 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 197,
+                "spatial_distance": 755.894337854174,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 48,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 235 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 235,
+                "spatial_distance": 1045.4570770720336,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 58,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 246 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 246,
+                "spatial_distance": 953.1333852090168,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 75,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 256 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 256,
+                "spatial_distance": 791.5751701512623,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 271 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 271,
+                "spatial_distance": 817.7071602963986,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 319 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 319,
+                "spatial_distance": 795.998272611191,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 329 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 329,
+                "spatial_distance": 800.531854456773,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 336 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 336,
+                "spatial_distance": 811.2991125349515,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 4,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 502 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 502,
+                "spatial_distance": 1107.235521467768,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 23,
+            "decision": "NO_MATCH",
+            "reason": "Spatial distance 225.2 exceeds threshold 200.0",
+            "evidence": {
+                "temporal_gap": 2,
+                "spatial_distance": 225.22932757525163,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 29,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 46 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 46,
+                "spatial_distance": 0.0,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 30,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 49 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 49,
+                "spatial_distance": 457.7472009745117,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 31,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 58 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 58,
+                "spatial_distance": 490.37332717022855,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 32,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 63 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 63,
+                "spatial_distance": 136.07718398026907,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 48,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 101 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 101,
+                "spatial_distance": 380.4421769467734,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 58,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 112 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 112,
+                "spatial_distance": 283.98679546767664,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 75,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 122 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 122,
+                "spatial_distance": 111.94641575325224,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 137 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 137,
+                "spatial_distance": 60.63208721460939,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 185 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 185,
+                "spatial_distance": 40.47838929601819,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 195 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 195,
+                "spatial_distance": 50.5618433208284,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 202 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 202,
+                "spatial_distance": 58.638724406317024,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 7,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 368 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 368,
+                "spatial_distance": 443.6228691129437,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 23,
+            "decision": "NO_MATCH",
+            "reason": "Spatial distance 214.8 exceeds threshold 200.0",
+            "evidence": {
+                "temporal_gap": 2,
+                "spatial_distance": 214.80805385273615,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 29,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 46 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 46,
+                "spatial_distance": 61.32087735836792,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 30,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 49 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 49,
+                "spatial_distance": 414.93041585306804,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 31,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 58 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 58,
+                "spatial_distance": 548.5136734849916,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 32,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 63 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 63,
+                "spatial_distance": 152.14548958151866,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 48,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 101 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 101,
+                "spatial_distance": 341.31656859871305,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 58,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 112 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 112,
+                "spatial_distance": 249.99449993949867,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 75,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 122 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 122,
+                "spatial_distance": 111.20364202668904,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 137 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 137,
+                "spatial_distance": 0.7071067811865476,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 185 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 185,
+                "spatial_distance": 24.12985702402731,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 195 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 195,
+                "spatial_distance": 30.03747659175118,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 202 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 202,
+                "spatial_distance": 21.70829334609241,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 8,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 368 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 368,
+                "spatial_distance": 402.2461932697437,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 23,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 13,
+                "spatial_distance": 98.03188256888674,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 29,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 57 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 57,
+                "spatial_distance": 161.2280992879343,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 30,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 60 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 60,
+                "spatial_distance": 380.2959373961284,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 31,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 69 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 69,
+                "spatial_distance": 553.8397782752697,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 32,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 74 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 74,
+                "spatial_distance": 25.622255950637914,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 48,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 112 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 112,
+                "spatial_distance": 298.22684319155445,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 58,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 123 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 123,
+                "spatial_distance": 201.5589243868899,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 75,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 133 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 133,
+                "spatial_distance": 70.28869041318099,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 148 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 148,
+                "spatial_distance": 176.8735423968209,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 196 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 196,
+                "spatial_distance": 159.8780785473731,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 206 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 206,
+                "spatial_distance": 147.80054127099805,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 213 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 213,
+                "spatial_distance": 155.82361823549087,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 9,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 379 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 379,
+                "spatial_distance": 362.55930549359783,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 14,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 3,
+                "spatial_distance": 118.5179311328037,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 16,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 6,
+                "spatial_distance": 185.60711193270586,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 23,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 28,
+                "spatial_distance": 42.0,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 29,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 72 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 72,
+                "spatial_distance": 200.56981328205896,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 30,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 75 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 75,
+                "spatial_distance": 278.5502647638304,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 31,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 84 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 84,
+                "spatial_distance": 650.500768639054,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 32,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 89 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 89,
+                "spatial_distance": 106.56101538555271,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 48,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 127 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 127,
+                "spatial_distance": 196.64307768136666,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 58,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 138 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 138,
+                "spatial_distance": 97.67932227447118,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 75,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 148 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 148,
+                "spatial_distance": 92.5,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 163 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 163,
+                "spatial_distance": 181.37254478007415,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 211 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 211,
+                "spatial_distance": 176.80851223852318,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 221 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 221,
+                "spatial_distance": 161.19320705290284,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 228 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 228,
+                "spatial_distance": 162.28447245500723,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 12,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 394 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 394,
+                "spatial_distance": 261.60753047265285,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 16,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 2,
+                "spatial_distance": 66.2872536767062,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 23,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 24,
+                "spatial_distance": 126.49110640673517,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 29,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 68 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 68,
+                "spatial_distance": 117.84841959059104,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 30,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 71 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 71,
+                "spatial_distance": 398.47741466738114,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 31,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 80 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 80,
+                "spatial_distance": 530.5009425062316,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 32,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 85 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 85,
+                "spatial_distance": 19.474342094150447,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 48,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 123 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 123,
+                "spatial_distance": 316.64254294077415,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 58,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 134 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 134,
+                "spatial_distance": 217.41952534213664,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 75,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 144 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 144,
+                "spatial_distance": 45.609757727924844,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 159 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 159,
+                "spatial_distance": 138.0,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 207 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 207,
+                "spatial_distance": 119.21094748386156,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 217 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 217,
+                "spatial_distance": 108.50460819707152,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 224 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 224,
+                "spatial_distance": 117.65309175708049,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 14,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 390 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 390,
+                "spatial_distance": 381.6182647620525,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 29,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 40 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 40,
+                "spatial_distance": 523.1538970513361,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 30,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 43 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 43,
+                "spatial_distance": 957.4437320281543,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 31,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 52 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 52,
+                "spatial_distance": 36.87817782917155,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 32,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 57 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 57,
+                "spatial_distance": 573.0872533916629,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 48,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 95 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 95,
+                "spatial_distance": 875.603363401489,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 58,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 106 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 106,
+                "spatial_distance": 776.3584867830067,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 75,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 116 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 116,
+                "spatial_distance": 593.5537043941348,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 131 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 131,
+                "spatial_distance": 581.2428494183821,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 179 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 179,
+                "spatial_distance": 563.5534579789214,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 189 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 189,
+                "spatial_distance": 572.7988303060682,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 196 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 196,
+                "spatial_distance": 581.7220126486534,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 16,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 362 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 362,
+                "spatial_distance": 940.5616673031067,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 30,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 2,
+                "spatial_distance": 33.425289826716536,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 31,
+            "decision": "NO_MATCH",
+            "reason": "Spatial distance 897.5 exceeds threshold 200.0",
+            "evidence": {
+                "temporal_gap": 11,
+                "spatial_distance": 897.520055486227,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 32,
+            "decision": "NO_MATCH",
+            "reason": "Spatial distance 353.1 exceeds threshold 200.0",
+            "evidence": {
+                "temporal_gap": 16,
+                "spatial_distance": 353.06692000242674,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 48,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 54 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 54,
+                "spatial_distance": 50.5618433208284,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 58,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 65 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 65,
+                "spatial_distance": 150.1407672819078,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 75,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 75 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 75,
+                "spatial_distance": 335.43292921238367,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 90 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 90,
+                "spatial_distance": 389.6793553679743,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 138 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 138,
+                "spatial_distance": 396.02051714526107,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 148 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 148,
+                "spatial_distance": 381.74107717142516,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 155 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 155,
+                "spatial_distance": 377.53311113066627,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 23,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 321 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 321,
+                "spatial_distance": 14.713938969562161,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 30,
+            "current_track_id": 48,
+            "decision": "NO_MATCH",
+            "reason": "Spatial distance 864.8 exceeds threshold 200.0",
+            "evidence": {
+                "temporal_gap": 6,
+                "spatial_distance": 864.7550231134827,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 30,
+            "current_track_id": 58,
+            "decision": "NO_MATCH",
+            "reason": "Spatial distance 765.4 exceeds threshold 200.0",
+            "evidence": {
+                "temporal_gap": 17,
+                "spatial_distance": 765.4083877251411,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 30,
+            "current_track_id": 75,
+            "decision": "NO_MATCH",
+            "reason": "Spatial distance 582.1 exceeds threshold 200.0",
+            "evidence": {
+                "temporal_gap": 27,
+                "spatial_distance": 582.1275633398577,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 30,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 42 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 42,
+                "spatial_distance": 568.0266278969675,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 30,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 90 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 90,
+                "spatial_distance": 550.567888638631,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 30,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 100 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 100,
+                "spatial_distance": 560.0080356566324,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 30,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 107 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 107,
+                "spatial_distance": 568.8207098902078,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 30,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 273 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 273,
+                "spatial_distance": 929.7371940500176,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 31,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Spatial distance 400.6 exceeds threshold 200.0",
+            "evidence": {
+                "temporal_gap": 11,
+                "spatial_distance": 400.6135918812541,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 31,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 59 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 59,
+                "spatial_distance": 408.4268600373878,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 31,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 69 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 69,
+                "spatial_distance": 394.5915609842664,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 31,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 76 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 76,
+                "spatial_distance": 389.68256312029155,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 31,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 242 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 242,
+                "spatial_distance": 19.90602923739438,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 32,
+            "current_track_id": 48,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 38 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 38,
+                "spatial_distance": 302.83700236265713,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 32,
+            "current_track_id": 58,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 49 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 49,
+                "spatial_distance": 204.22658984569077,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 32,
+            "current_track_id": 75,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 59 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 59,
+                "spatial_distance": 48.46648326421054,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 32,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 74 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 74,
+                "spatial_distance": 151.6945944982879,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 32,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 122 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 122,
+                "spatial_distance": 134.34470588750418,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 32,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 132 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 132,
+                "spatial_distance": 122.4846929211973,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 32,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 139 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 139,
+                "spatial_distance": 130.77652694577876,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 32,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 305 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 305,
+                "spatial_distance": 367.6890670117892,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 48,
+            "current_track_id": 75,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 5,
+                "spatial_distance": 87.14499411899688,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 48,
+            "current_track_id": 90,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 20,
+                "spatial_distance": 177.39926719127112,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 48,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 68 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 68,
+                "spatial_distance": 172.3724165868774,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 48,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 78 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 78,
+                "spatial_distance": 156.76814089603792,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 48,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 85 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 85,
+                "spatial_distance": 158.1051865056931,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 48,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 251 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 251,
+                "spatial_distance": 267.09174453734056,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 58,
+            "current_track_id": 75,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 8,
+                "spatial_distance": 185.9731163367437,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 58,
+            "current_track_id": 90,
+            "decision": "NO_MATCH",
+            "reason": "Spatial distance 250.9 exceeds threshold 200.0",
+            "evidence": {
+                "temporal_gap": 23,
+                "spatial_distance": 250.86101729842363,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 58,
+            "current_track_id": 91,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 71 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 71,
+                "spatial_distance": 253.49654829997192,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 58,
+            "current_track_id": 95,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 81 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 81,
+                "spatial_distance": 238.4585917932084,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 58,
+            "current_track_id": 97,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 88 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 88,
+                "spatial_distance": 235.90782098099248,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 58,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 254 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 254,
+                "spatial_distance": 164.03734330938184,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 75,
+            "current_track_id": 95,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 10,
+                "spatial_distance": 9.848857801796104,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 75,
+            "current_track_id": 97,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 17,
+                "spatial_distance": 16.76305461424021,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 75,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 183 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 183,
+                "spatial_distance": 404.8224919640706,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 91,
+            "current_track_id": 95,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 6,
+                "spatial_distance": 14.089002803605371,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 91,
+            "current_track_id": 97,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 13,
+                "spatial_distance": 13.946325680981353,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 91,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 179 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 179,
+                "spatial_distance": 404.66436709945197,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 95,
+            "current_track_id": 97,
+            "decision": "MATCH",
+            "reason": "All baseline thresholds satisfied",
+            "evidence": {
+                "temporal_gap": 3,
+                "spatial_distance": 7.433034373659253,
+                "class_match": true
+            }
+        },
+        {
+            "previous_track_id": 95,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 169 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 169,
+                "spatial_distance": 394.6770831958704,
+                "class_match": false
+            }
+        },
+        {
+            "previous_track_id": 97,
+            "current_track_id": 137,
+            "decision": "NO_MATCH",
+            "reason": "Temporal gap 150 exceeds threshold 30",
+            "evidence": {
+                "temporal_gap": 150,
+                "spatial_distance": 384.8960898736177,
+                "class_match": false
+            }
+        }
+    ]
+}

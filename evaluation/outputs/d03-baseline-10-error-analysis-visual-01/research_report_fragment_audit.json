@@ -1,0 +1,53 @@
+{
+  "audit_id": "D-03-RESEARCH-REPORT-02E-R1",
+  "audit_scope": "Audit of the four completed research-report fragments before merging. No modification, no merge, no new analysis.",
+  "section_coverage": {
+    "status": "PASS",
+    "sections_present": 12,
+    "section_sequence": "1 through 12, each exactly once",
+    "fragment_01_03": "Sections 1, 2, 3 only",
+    "fragment_04_06": "Sections 4, 5, 6 only",
+    "fragment_07_09": "Sections 7, 8, 9 only",
+    "fragment_10_12": "Sections 10, 11, 12 only",
+    "missing_sections": [],
+    "duplicated_sections": []
+  },
+  "outline_consistency": {
+    "status": "PASS",
+    "section_titles_match_outline": true,
+    "scope_followed": true,
+    "notes": "Each fragment follows the intended scope and structure recorded in research_report_outline.json. No section was rewritten or reordered."
+  },
+  "scientific_boundary_check": {
+    "status": "PASS",
+    "unsupported_claims_found": false,
+    "causal_overclaims_found": false,
+    "statistical_overclaims_found": false,
+    "generalization_claims_found": false,
+    "unsupported_recommendations_found": false,
+    "unsupported_experimental_claims_found": false,
+    "person_class_overinterpretation_found": false,
+    "visual_sample_overgeneralization_found": false,
+    "notes": "All fragments preserve the person-class no_ground_truth limitation, the 12-case sample-scope limitation, and the causal-language boundary. No fragment uses 'proves', 'caused by', 'root cause', 'because the model', 'statistically significant', 'generalization failure', or 'representative of the whole dataset' as an affirmative claim."
+  },
+  "internal_consistency": {
+    "status": "PASS",
+    "numerical_findings_consistent": true,
+    "visual_findings_consistent": true,
+    "evidence_levels_consistent": true,
+    "limitations_consistent": true,
+    "person_class_limitation_consistent": true,
+    "sample_scope_limitation_consistent": true,
+    "causal_limitations_consistent": true,
+    "notes": "Numerical values (valid/test overall metrics, per-class AP, differences, TP/FP/FN totals, borderline IoU values) are identical across fragments 04_06, 07_09, and 10_12 and match evidence_integration.json. The Level A/B/C distinction is applied consistently. The person-class and 12-case sample-scope limitations are stated consistently in fragments 07_09 and 10_12."
+  },
+  "traceability_check": {
+    "status": "PASS",
+    "claims_consistent_with_evidence_integration": true,
+    "no_additional_artifacts_read": true,
+    "no_new_calculations": true,
+    "notes": "Substantive factual statements are tagged with source references to evidence_integration.json, scientific_boundary.json, or final_integrity_validation.json. No claim exceeds the support recorded in the evidence integration layer."
+  },
+  "overall_status": "PASS",
+  "issues": []
+}

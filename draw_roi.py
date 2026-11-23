@@ -8,7 +8,7 @@ def draw_roi(event, x, y, flags, param):
         points.append((x, y))
         print(points)
 
-cap = cv2.VideoCapture("public/4.mp4")
+cap = cv2.VideoCapture("public/3.mp4")
 
 fps = cap.get(cv2.CAP_PROP_FPS)
 delay = int(15000 / fps)

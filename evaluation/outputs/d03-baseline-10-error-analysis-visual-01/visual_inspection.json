@@ -1,0 +1,890 @@
+{
+  "inspection_count": 12,
+  "inspection_method": "single_image_visual_inspection",
+  "cases": [
+    {
+      "case_id": "VC-08",
+      "split": "test",
+      "image_path": "My-First-Project-4-detection\test\\images\frame_187_jpg.rf.2210d9f0b1b9a03f39886babe41adc1c.jpg",
+      "visual_inspection_status": "COMPLETED",
+      "observed_facts": [
+        "Same frame as VC-11/VC-12: daytime outdoor multi-lane road with very high object density and many small, tightly packed vehicles",
+        "Target region is in the lower-center-right portion of the frame near the bottom edge (normalized x ~0.69-0.71, y ~0.91-0.93)",
+        "The target region contains a small two-wheeled vehicle (motorcycle/scooter) riding among dense near-field traffic close to the bottom of the frame",
+        "The target motorcycle is small in apparent size and partially surrounded by other closely spaced vehicles",
+        "Two separate model predictions land on essentially the same motorcycle location, with highly overlapping boxes"
+      ],
+      "machine_evidence_summary": {
+        "prediction_index": 52,
+        "gt_index": 68,
+        "class_id": 2,
+        "class_name": "motorcycle",
+        "confidence": 0.3867965340614319,
+        "iou_with_gt_68": 0.7246194118594759,
+        "predicted_bbox": [
+          0.695119333,
+          0.911394978,
+          0.706344461,
+          0.929232693
+        ],
+        "gt_bbox": [
+          0.6921875,
+          0.910156,
+          0.7062505,
+          0.928906
+        ],
+        "match_status": "FALSE_POSITIVE (duplicate)",
+        "winning_prediction": {
+          "prediction_index": 16,
+          "class_name": "motorcycle",
+          "confidence": 0.49558284878730774,
+          "predicted_bbox": [
+            0.693573904,
+            0.909482956,
+            0.704225779,
+            0.926408386
+          ],
+          "iou_with_gt_68": 0.639165973,
+          "matched_gt_index": 68
+        },
+        "explanation": "GT 68 was already matched by the higher-confidence prediction_index 16 (0.496) during the greedy matching pass; prediction_index 52 (0.387) overlaps the same GT with IoU 0.725 but is therefore counted as a duplicate FP rather than a second TP.",
+        "image_level": {
+          "prediction_count": 300,
+          "ground_truth_count": 78,
+          "tp_count": 73,
+          "fp_count": 227,
+          "fn_count": 5,
+          "per_class": {
+            "0": {
+              "TP": 1,
+              "FP": 3,
+              "FN": 0
+            },
+            "1": {
+              "TP": 25,
+              "FP": 95,
+              "FN": 2
+            },
+            "2": {
+              "TP": 43,
+              "FP": 113,
+              "FN": 3
+            },
+            "4": {
+              "TP": 4,
+              "FP": 16,
+              "FN": 0
+            }
+          }
+        }
+      },
+      "error_categories": [
+        "DUPLICATE_DETECTION",
+        "SMALL_OBJECT"
+      ],
+      "supporting_evidence": [
+        "Machine matching shows two distinct motorcycle predictions aimed at the same GT 68: prediction_index 16 (confidence 0.496, IoU 0.639) matched the GT, and prediction_index 52 (confidence 0.387, IoU 0.725) was rejected as a duplicate false positive because the GT was already consumed.",
+        "The two predicted boxes are nearly coincident (both roughly x 0.693-0.706, y 0.909-0.929), which is consistent with a single small motorcycle in a dense region being detected twice rather than two distinct vehicles.",
+        "The target motorcycle is visually small and sits close to the bottom image edge among tightly packed traffic, which is the kind of region where the model emits multiple overlapping candidate boxes.",
+        "The class-2 (motorcycle) per-class tally for this image shows 43 TP vs 113 FP, consistent with repeated duplicate boxes on motorcycles in dense regions."
+      ],
+      "uncertainty": [
+        "Whether the two boxes correspond to one motorcycle or two very close motorcycles cannot be conclusively resolved at this image scale; if two distinct two-wheelers were present and only one is annotated, one of the predictions could be a genuine second object rather than a pure duplicate.",
+        "No independent localization error is asserted: the duplicate box actually overlaps the GT with the higher IoU (0.725) than the winning box (0.639); the classification as FP is purely a consequence of greedy one-to-one matching, not of box quality.",
+        "SMALL_OBJECT is recorded as a contributing scene-level difficulty, not as a proven cause of this specific duplicate."
+      ]
+    },
+    {
+      "case_id": "VC-09",
+      "split": "valid",
+      "image_path": "My-First-Project-4-detection\\valid\\images\\frame_52_jpg.rf.e7b90717d78ef692f805ed12dfd3256d.jpg",
+      "observed_visual_facts": [
+        "Outdoor multi-lane road / intersection scene with moderate traffic density",
+        "Multiple passenger cars visible across the mid-ground and background",
+        "At least one two-wheeled vehicle (motorcycle/scooter) present among the traffic",
+        "Objects appear small to medium in apparent size relative to the frame",
+        "Several vehicles are positioned close to the left and right image boundaries",
+        "No heavy occlusion observed between vehicles; objects appear mostly clearly separated",
+        "No obvious crowding or dense vehicle clusters",
+        "Lighting is daytime and even, with no strong shadows or glare degrading visibility"
+      ],
+      "error_categories": [
+        "SMALL_OBJECT",
+        "LOW_CONFIDENCE"
+      ],
+      "supporting_evidence": [
+        "Predicted bbox normalized extent is approximately [0.853, 0.677, 0.864, 0.711], i.e. width ~0.011 and height ~0.034 of the frame, indicating a very small target object consistent with the small apparent size of the two-wheeled vehicle in the scene",
+        "Model confidence for this prediction is 0.078, well below typical detection thresholds, consistent with a visually small / low-contrast object",
+        "IoU 0.5001 sits exactly at the 0.50 threshold, consistent with a borderline localization match on a small object"
+      ],
+      "uncertainty": [
+        "Exact identity of the target two-wheeled vehicle (motorcycle vs scooter) cannot be resolved at this image scale",
+        "Whether the low confidence is driven primarily by object size, distance, or partial visibility cannot be determined from the image alone",
+        "No independent localization error or class confusion is visually evident; these categories are not assigned"
+      ]
+    },
+    {
+      "case_id": "VC-10",
+      "split": "test",
+      "image_path": "My-First-Project-4-detection\\test\\images\\frame_15_jpg.rf.2249587c24e46c4c1ccb8d9e05756f81.jpg",
+      "observed_visual_facts": [
+        "Daytime outdoor multi-lane road scene with moderate traffic density",
+        "Multiple passenger cars visible across the mid-ground and background",
+        "At least one larger vehicle (truck/bus class) present among the traffic",
+        "Target region lies in the upper-center-left portion of the frame, well above the near-field vehicles",
+        "Objects in the target region appear small in apparent size relative to the frame",
+        "Vehicles are mostly clearly separated with no heavy occlusion or dense crowding in the target vicinity",
+        "Lighting is bright and even daylight with minimal shadow or glare degradation"
+      ],
+      "error_categories": [
+        "SMALL_OBJECT",
+        "LOW_CONFIDENCE"
+      ],
+      "supporting_evidence": [
+        "Predicted bbox normalized extent is approximately [0.472, 0.272, 0.492, 0.313], i.e. width ~0.020 and height ~0.041 of the frame, indicating a very small target object consistent with the small apparent size of the larger vehicle in that region",
+        "Model confidence for this prediction is 0.241, below typical detection thresholds, consistent with a visually small / distant object",
+        "IoU 0.5006 sits just above the 0.50 threshold, consistent with a borderline localization match on a small object; the tight bbox extent makes any misalignment visually plausible but not independently confirmable from the image alone"
+      ],
+      "uncertainty": [
+        "Exact vehicle type (truck vs bus vs large van) cannot be resolved at this image scale",
+        "Whether the borderline IoU reflects a genuine localization offset or simply the small object size cannot be determined from the image alone; LOCALIZATION_ERROR is therefore not assigned",
+        "No class confusion, occlusion, crowding, or background false positive is visually evident in the target region; those categories are not assigned"
+      ]
+    },
+    {
+      "case_id": "VC-11",
+      "split": "test",
+      "image_path": "My-First-Project-4-detection\\test\\images\\frame_187_jpg.rf.2210d9f0b1b9a03f39886babe41adc1c.jpg",
+      "observed_visual_facts": [
+        "Daytime outdoor multi-lane road scene with moderate traffic density",
+        "Multiple passenger cars and at least one larger vehicle visible across the mid-ground and background",
+        "Target region is the extreme top-left corner of the frame, touching both the left and top image borders",
+        "The target region contains a dark, curved shape consistent with the upper corner / roofline of a vehicle partially cut off by the frame edge",
+        "The predicted box is very small in apparent size relative to the frame",
+        "The target object is truncated by the image border, so only a corner portion is visible",
+        "Lighting is bright and even daylight with no strong shadows or glare degrading visibility"
+      ],
+      "error_categories": [
+        "FALSE_POSITIVE_BACKGROUND",
+        "SMALL_OBJECT"
+      ],
+      "supporting_evidence": [
+        "Predicted bbox normalized extent is approximately [0.005, 0.000, 0.041, 0.037], i.e. width ~0.036 and height ~0.037 of the frame, indicating a very small target located at the extreme image corner",
+        "The predicted box sits at the very corner of the frame where only a partial vehicle corner / roofline is visible, consistent with a detection anchored on a border-truncated background element rather than a fully visible in-frame object",
+        "Model confidence for this prediction is 0.590, the highest confidence among the sampled failures, indicating the model is confident that a car is present in this corner region"
+      ],
+      "uncertainty": [
+        "Whether the corner shape is a genuine car part versus another dark background element (guardrail, signage edge, shadow) cannot be definitively resolved at this scale",
+        "Whether this prediction is a true false positive on background or a valid detection of a partially out-of-frame vehicle cannot be confirmed from the image alone; FALSE_POSITIVE_BACKGROUND is assigned because the detected region is at the image border and contains only a partial, ambiguous shape",
+        "No occlusion, crowding, class confusion, or duplicate detection is visually evident in the target region; those categories are not assigned"
+      ]
+    },
+    {
+      "case_id": "VC-12",
+      "split": "test",
+      "image_path": "My-First-Project-4-detection\test\\images\frame_187_jpg.rf.2210d9f0b1b9a03f39886babe41adc1c.jpg",
+      "visual_inspection_status": "COMPLETED",
+      "observed_visual_facts": [
+        "Daytime outdoor multi-lane road scene with moderate-to-dense traffic",
+        "Very high object density: many small vehicles (cars and two-wheelers) packed across the mid-ground and background",
+        "Objects appear small in apparent size relative to the frame; many are distant",
+        "Vehicles are tightly packed with little separation in places, consistent with crowding",
+        "Target region is the extreme bottom-right corner of the frame, touching both the right and bottom image borders",
+        "The target region contains a small dark shape consistent with a partial vehicle corner truncated by the frame edge",
+        "Lighting is bright and even daylight with no strong shadows or glare degrading visibility"
+      ],
+      "machine_evidence_summary": {
+        "prediction_count": 300,
+        "ground_truth_count": 78,
+        "tp_count": 73,
+        "fp_count": 227,
+        "fn_count": 5,
+        "predicted_classes": {
+          "bus": 4,
+          "car": 120,
+          "motorcycle": 156,
+          "truck": 20
+        },
+        "ground_truth_classes": {
+          "motorcycle": 46,
+          "car": 27,
+          "truck": 4,
+          "bus": 1
+        },
+        "per_class": {
+          "0": {
+            "TP": 1,
+            "FP": 3,
+            "FN": 0
+          },
+          "1": {
+            "TP": 25,
+            "FP": 95,
+            "FN": 2
+          },
+          "2": {
+            "TP": 43,
+            "FP": 113,
+            "FN": 3
+          },
+          "4": {
+            "TP": 4,
+            "FP": 16,
+            "FN": 0
+          }
+        },
+        "vc12_target": {
+          "prediction_index": 2,
+          "class_id": 2,
+          "class_name": "motorcycle",
+          "confidence": 0.5506041049957275,
+          "predicted_bbox": [
+            0.964297485,
+            0.936988068,
+            0.981416702,
+            0.964221954
+          ],
+          "match_status": "FALSE_POSITIVE",
+          "matched_gt_index": null,
+          "iou_with_nearest_gt": null
+        },
+        "no_ground_truth_object_exists_in_the_bottom_right_corner_region": true
+      },
+      "error_categories": [
+        "FALSE_POSITIVE_BACKGROUND",
+        "SMALL_OBJECT",
+        "CROWDING"
+      ],
+      "supporting_evidence": [
+        "Matching evidence classifies prediction_index 2 (motorcycle, confidence 0.551, bbox [0.964, 0.937, 0.981, 0.964]) as a FALSE_POSITIVE: no same-class ground-truth object overlaps it at IoU >= 0.50, and no ground-truth object of any class is recorded in the bottom-right corner region of this image",
+        "The predicted box sits at the extreme bottom-right corner of the frame (x from 0.964 to 0.981, y from 0.937 to 0.964), i.e. roughly 1.7% x 2.7% of the frame area, and the visible content there is a small dark truncated shape at the image border, consistent with a background / border artifact being scored as a motorcycle",
+        "The scene is visually dense with many small, tightly packed vehicles, which is the kind of region where small dark fragments are easily mistaken for two-wheeled vehicles; the high FP count for class 2 (113 FPs vs 43 TPs) is consistent with this difficulty",
+        "The prediction is the second-highest-confidence failure in the sampled set (0.551), indicating the model assigned notable confidence to a region that contains no annotated object"
+      ],
+      "uncertainty": [
+        "Whether the small dark shape in the bottom-right corner is a genuine partially out-of-frame motorcycle versus an ambiguous background fragment (shadow, guardrail edge, vehicle trim) cannot be definitively resolved at this image scale",
+        "Because no ground-truth annotation exists in that corner, the label 'false positive' rests on the annotation set as well as the image; if a truncated motorcycle were meant to be annotated, this could instead be a MISSED_OBJECT / boundary issue. This is recorded as UNCERTAIN at the pixel level but the machine evidence supports FALSE_POSITIVE_BACKGROUND",
+        "CROWDING and SMALL_OBJECT are recorded as contributing scene-level difficulties, not as proven causes of this specific prediction"
+      ]
+    },
+    {
+      "case_id": "VC-07",
+        "split": "test",
+        "image_path": "My-First-Project-4-detection\test\\images\frame_187_jpg.rf.2210d9f0b1b9a03f39886babe41adc1c.jpg",
+        "visual_inspection_status": "COMPLETED",
+        "observed_facts": [
+          "Same frame as VC-08/VC-11/VC-12: daytime outdoor multi-lane road with very high object density and many small, tightly packed vehicles",
+          "Target region is in the lower-center-right portion of the frame near the bottom edge (normalized x ~0.672-0.682, y ~0.942-0.960)",
+          "The target region contains a small two-wheeled vehicle (motorcycle/scooter) riding among dense near-field traffic close to the bottom of the frame",
+          "The target motorcycle is small in apparent size and partially surrounded by other closely spaced vehicles",
+          "Two separate model predictions land on essentially the same motorcycle location, with highly overlapping boxes"
+        ],
+        "machine_evidence_summary": {
+          "prediction_index": 47,
+          "gt_index": 74,
+          "class_id": 2,
+          "class_name": "motorcycle",
+          "confidence": 0.4066668450832367,
+          "iou_with_gt_74": 0.627732305046965,
+          "predicted_bbox": [
+            0.672386408,
+            0.941654205,
+            0.682030725,
+            0.959521866
+          ],
+          "gt_bbox": [
+            0.673047,
+            0.9453125,
+            0.683203,
+            0.9609375
+          ],
+          "match_status": "FALSE_POSITIVE (duplicate)",
+          "winning_prediction": {
+            "prediction_index": 15,
+            "class_name": "motorcycle",
+            "confidence": 0.49789509177207947,
+            "predicted_bbox": [
+              0.673760509,
+              0.942819405,
+              0.683402157,
+              0.960925865
+            ],
+            "iou_with_gt_74": 0.793334978,
+            "matched_gt_index": 74
+          },
+          "explanation": "GT 74 was already matched by the higher-confidence prediction_index 15 (0.498) during the greedy matching pass; prediction_index 47 (0.407) overlaps the same GT with IoU 0.628 but is therefore counted as a duplicate FP rather than a second TP.",
+          "image_level": {
+            "prediction_count": 300,
+            "ground_truth_count": 78,
+            "tp_count": 73,
+            "fp_count": 227,
+            "fn_count": 5,
+            "per_class": {
+              "0": {
+                "TP": 1,
+                "FP": 3,
+                "FN": 0
+              },
+              "1": {
+                "TP": 25,
+                "FP": 95,
+                "FN": 2
+              },
+              "2": {
+                "TP": 43,
+                "FP": 113,
+                "FN": 3
+              },
+              "4": {
+                "TP": 4,
+                "FP": 16,
+                "FN": 0
+              }
+            }
+          }
+        },
+        "error_categories": [
+          "DUPLICATE_DETECTION",
+          "SMALL_OBJECT"
+        ],
+        "supporting_evidence": [
+          "Machine matching shows two distinct motorcycle predictions aimed at the same GT 74: prediction_index 15 (confidence 0.498, IoU 0.793) matched the GT, and prediction_index 47 (confidence 0.407, IoU 0.628) was rejected as a duplicate false positive because the GT was already consumed.",
+          "The two predicted boxes are nearly coincident (both roughly x 0.672-0.683, y 0.942-0.961), which is consistent with a single small motorcycle in a dense region being detected twice rather than two distinct vehicles.",
+          "The target motorcycle is visually small and sits close to the bottom image edge among tightly packed traffic, which is the kind of region where the model emits multiple overlapping candidate boxes.",
+          "The class-2 (motorcycle) per-class tally for this image shows 43 TP vs 113 FP, consistent with repeated duplicate boxes on motorcycles in dense regions."
+        ],
+        "uncertainty": [
+          "Whether the two boxes correspond to one motorcycle or two very close motorcycles cannot be conclusively resolved at this image scale; if two distinct two-wheelers were present and only one is annotated, one of the predictions could be a genuine second object rather than a pure duplicate.",
+          "No independent localization error is asserted: the duplicate box overlaps the GT (IoU 0.628) while the winning box overlaps it more tightly (IoU 0.793); the classification as FP is purely a consequence of greedy one-to-one matching, not of box quality.",
+          "SMALL_OBJECT is recorded as a contributing scene-level difficulty, not as a proven cause of this specific duplicate."
+        ]
+    },
+    {
+      "case_id": "VC-01",
+      "split": "test",
+      "image_path": "My-First-Project-4-detection\\test\\images\\frame_104_jpg.rf.86c46a0d54b4604cd216ac1dd759049d.jpg",
+      "visual_inspection_status": "COMPLETED",
+      "observed_facts": [
+        "Daytime outdoor multi-lane road scene with moderate-to-dense traffic",
+        "Many small vehicles (cars and two-wheelers) packed across the mid-ground and background",
+        "Objects are generally small in apparent size and many are distant",
+        "Vehicles are tightly packed with little separation in places, consistent with crowding",
+        "Target region is in the lower-center portion of the frame near the bottom edge (normalized x ~0.392-0.406, y ~0.893-0.922)",
+        "The target region contains a small, distant larger vehicle (bus-class) positioned among other closely spaced vehicles",
+        "The target object is very small in apparent size and sits close to other closely spaced vehicles",
+        "Lighting is bright and even daylight with no strong shadows or glare degrading visibility"
+      ],
+      "machine_evidence_summary": {
+        "prediction_index": 28,
+        "gt_index": 12,
+        "class_id": 0,
+        "class_name": "bus",
+        "confidence": 0.3933946490287781,
+        "iou_with_gt_12": 0.4718,
+        "predicted_bbox": [
+          0.391891575,
+          0.892593956,
+          0.405462694,
+          0.922010231
+        ],
+        "gt_bbox": [
+          0.394141,
+          0.882813,
+          0.402735,
+          0.928125
+        ],
+        "match_status": "FALSE_POSITIVE (background)",
+        "explanation": "Prediction 28 (bus, confidence 0.393) is classified as a FALSE_POSITIVE because its IoU with the same-class bus GT (gt_index 12) is 0.4718, i.e. ~0.028 below the 0.50 matching threshold. The same bus GT is recorded as a FALSE_NEGATIVE (no prediction matched it at IoU >= 0.50), so the detector produced one bus box on the object that was too small/low-confidence to qualify, and missed the object entirely in the matching sense. The class-0 (bus) per-class tally for this image is 0 TP vs 7 FP vs 1 FN.",
+        "image_level": {
+          "prediction_count": 300,
+          "ground_truth_count": 77,
+          "tp_count": 50,
+          "fp_count": 250,
+          "fn_count": 27,
+          "per_class": {
+            "0": {
+              "TP": 0,
+              "FP": 7,
+              "FN": 1
+            },
+            "1": {
+              "TP": 21,
+              "FP": 106,
+              "FN": 18
+            },
+            "2": {
+              "TP": 26,
+              "FP": 126,
+              "FN": 7
+            },
+            "4": {
+              "TP": 3,
+              "FP": 11,
+              "FN": 1
+            }
+          }
+        }
+      },
+      "error_categories": [
+        "FALSE_POSITIVE_BACKGROUND",
+        "BORDERLINE_IOU_MATCH",
+        "SMALL_OBJECT"
+      ],
+      "supporting_evidence": [
+        "Machine matching classifies prediction 28 (bus, confidence 0.393, bbox [0.392, 0.893, 0.405, 0.922]) as a FALSE_POSITIVE: its IoU with the same-class bus GT (gt_index 12, bbox [0.394, 0.883, 0.403, 0.928]) is 0.4718, i.e. ~0.028 below the 0.50 threshold, a near-miss consistent with BORDERLINE_IOU_MATCH.",
+        "The same bus GT is recorded as a FALSE_NEGATIVE, so no prediction reached the 0.50 IoU threshold on this object; the single bus box that was produced (pred 28) was the only candidate and it fell short.",
+        "The predicted bbox is very small in frame terms (width ~0.014, height ~0.029 of the frame), indicating a small, distant larger vehicle consistent with the visually small apparent size of the target object in the lower-center region.",
+        "The class-0 (bus) per-class tally for this image shows 0 TP vs 7 FP vs 1 FN, consistent with weak bus detection on small, distant objects in this scene."
+      ],
+      "uncertainty": [
+        "Whether the target region contains a genuine bus versus a large van or truck cannot be resolved at this image scale; the FALSE_POSITIVE label rests on the bus-class prediction and GT annotation.",
+        "Whether the ~0.028 IoU shortfall reflects a genuine localization offset or simply the small object size cannot be determined from the image alone; BORDERLINE_IOU_MATCH is recorded as a plausible contributing factor, not a proven cause.",
+        "No duplicate detection or obvious background false positive on an empty region is visually evident at the target location; the box does land on a real vehicle-like shape, so FALSE_POSITIVE_BACKGROUND is assigned on the basis of the matching outcome rather than a visually empty background."
+      ]
+    },
+    {
+      "case_id": "VC-02",
+      "split": "test",
+      "image_path": "My-First-Project-4-detection\\test\\images\\frame_15_jpg.rf.2249587c24e46c4c1ccb8d9e05756f81.jpg",
+      "visual_inspection_status": "COMPLETED",
+      "observed_facts": [
+        "Daytime outdoor multi-lane road scene with moderate-to-dense traffic",
+        "Many small vehicles (cars and two-wheelers) packed across the mid-ground and background",
+        "Objects appear small in apparent size relative to the frame; many are distant",
+        "Vehicles are tightly packed with little separation in places, consistent with crowding",
+        "Target region is in the lower-middle portion of the frame (normalized x ~0.433-0.450, y ~0.752-0.793)",
+        "The target region contains a small, distant larger vehicle (bus-class) positioned among other closely spaced vehicles",
+        "The target object is very small in apparent size and sits close to other closely spaced vehicles",
+        "Lighting is bright and even daylight with no strong shadows or glare degrading visibility"
+      ],
+      "machine_evidence_summary": {
+        "prediction_index": 33,
+        "gt_index": null,
+        "class_id": 0,
+        "class_name": "bus",
+        "confidence": 0.382347047328949,
+        "iou_with_nearest_same_class_gt": 0.4582,
+        "predicted_bbox": [
+          0.432555819,
+          0.75155859,
+          0.450182676,
+          0.793244839
+        ],
+        "gt_bbox": null,
+        "match_status": "FALSE_POSITIVE (background)",
+        "nearest_same_class_gt": {
+          "gt_index": 31,
+          "class_name": "bus",
+          "gt_bbox": null,
+          "iou_with_prediction_33": 0.4582
+        },
+        "explanation": "Prediction 33 (bus, confidence 0.382) is classified as a FALSE_POSITIVE because no same-class GT overlaps it at IoU >= 0.50. The nearest bus GT (gt_index 31) overlaps it with IoU 0.4582, i.e. ~0.042 below the 0.50 threshold. Notably the same bus GT was matched by a much lower-confidence prediction (prediction_index 219, confidence 0.078, bbox [0.428, 0.744, 0.453, 0.821]) at IoU 0.6485, so the higher-confidence box lost the match on localization. The class-0 (bus) per-class tally for this image is 1 TP vs 5 FP vs 0 FN.",
+        "image_level": {
+          "prediction_count": 300,
+          "ground_truth_count": 78,
+          "tp_count": 62,
+          "fp_count": 238,
+          "fn_count": 16,
+          "per_class": {
+            "0": {
+              "TP": 1,
+              "FP": 5,
+              "FN": 0
+            },
+            "1": {
+              "TP": 24,
+              "FP": 109,
+              "FN": 3
+            },
+            "2": {
+              "TP": 34,
+              "FP": 108,
+              "FN": 12
+            },
+            "4": {
+              "TP": 3,
+              "FP": 16,
+              "FN": 1
+            }
+          }
+        }
+      },
+      "error_categories": [
+        "FALSE_POSITIVE_BACKGROUND",
+        "LOCALIZATION_ERROR",
+        "SMALL_OBJECT"
+      ],
+      "supporting_evidence": [
+        "Machine matching classifies prediction 33 (bus, confidence 0.382, bbox [0.433, 0.752, 0.450, 0.793]) as a FALSE_POSITIVE: no same-class GT overlaps it at IoU >= 0.50.",
+        "The nearest bus GT (gt_index 31) overlaps the prediction with IoU 0.4582, i.e. ~0.042 below the 0.50 threshold, consistent with a near-miss localization on a small/distant object.",
+        "The same bus GT was matched by a lower-confidence prediction (prediction_index 219, confidence 0.078) at IoU 0.6485, indicating the higher-confidence box was the worse-localized of the two on the same object.",
+        "The predicted bbox is very small in frame terms (width ~0.018, height ~0.042 of the frame), indicating a small, distant larger vehicle consistent with the visually small apparent size of the target object in the lower-middle region.",
+        "The class-0 (bus) per-class tally for this image shows 1 TP vs 5 FP vs 0 FN, consistent with weak bus detection on small, distant objects in this scene."
+      ],
+      "uncertainty": [
+        "Whether the target region contains a genuine bus versus a large van or truck cannot be resolved at this image scale; the FALSE_POSITIVE label rests on the bus-class prediction and GT annotation.",
+        "Whether the ~0.042 IoU shortfall reflects a genuine localization offset, a confidence-ranking mismatch, or simply the small object size cannot be determined from the image alone; LOCALIZATION_ERROR is recorded as a plausible contributing factor, not a proven cause.",
+        "No duplicate detection or obvious background false positive on an empty region is visually evident at the target location; the box does land on a real vehicle-like shape, so FALSE_POSITIVE_BACKGROUND is assigned on the basis of the matching outcome rather than a visually empty background."
+      ]
+    },
+    {
+      "case_id": "VC-03",
+      "split": "test",
+      "image_path": "My-First-Project-4-detection\\test\\images\\frame_104_jpg.rf.86c46a0d54b4604cd216ac1dd759049d.jpg",
+      "visual_inspection_status": "COMPLETED",
+      "observed_facts": [
+        "Daytime outdoor multi-lane road scene with moderate-to-dense traffic",
+        "Many small vehicles (cars and two-wheelers) packed across the mid-ground and background",
+        "Objects appear small in apparent size relative to the frame; many are distant",
+        "Vehicles are tightly packed with little separation in places, consistent with crowding",
+        "Target region is in the lower-middle portion of the frame (normalized x ~0.393-0.408, y ~0.890-0.921)",
+        "The target region contains a small, distant larger vehicle (bus-class) positioned at the lower edge of the frame, near other closely spaced vehicles",
+        "The target object is very small in apparent size and sits close to other closely spaced vehicles",
+        "Lighting is bright and even daylight with no strong shadows or glare degrading visibility"
+      ],
+      "machine_evidence_summary": {
+        "prediction_index": 127,
+        "gt_index": null,
+        "class_id": 0,
+        "class_name": "bus",
+        "confidence": 0.2238447517156601,
+        "iou_with_nearest_same_class_gt": 0.4582,
+        "predicted_bbox": [
+          0.392907262,
+          0.889504242,
+          0.407865047,
+          0.920927811
+        ],
+        "gt_bbox": null,
+        "match_status": "FALSE_POSITIVE (background)",
+        "nearest_same_class_gt": {
+          "gt_index": 12,
+          "class_name": "bus",
+          "gt_bbox": [
+            0.394141,
+            0.882813,
+            0.402735,
+            0.928125
+          ],
+          "iou_with_prediction_127": 0.4582
+        },
+        "explanation": "Prediction 127 (bus, confidence 0.224) is classified as a FALSE_POSITIVE because no same-class GT overlaps it at IoU >= 0.50. The nearest bus GT (gt_index 12) overlaps it with IoU 0.4582, i.e. ~0.042 below the 0.50 threshold, so the prediction is not matched and the GT is instead left unmatched on this prediction pass. The class-0 (bus) per-class tally for this image is 0 TP vs 7 FP vs 1 FN, consistent with weak bus detection.",
+        "image_level": {
+          "prediction_count": 300,
+          "ground_truth_count": 77,
+          "tp_count": 50,
+          "fp_count": 250,
+          "fn_count": 27,
+          "per_class": {
+            "0": {
+              "TP": 0,
+              "FP": 7,
+              "FN": 1
+            },
+            "1": {
+              "TP": 21,
+              "FP": 106,
+              "FN": 18
+            },
+            "2": {
+              "TP": 26,
+              "FP": 126,
+              "FN": 7
+            },
+            "4": {
+              "TP": 3,
+              "FP": 11,
+              "FN": 1
+            }
+          }
+        }
+      },
+      "error_categories": [
+        "FALSE_POSITIVE_BACKGROUND",
+        "BORDERLINE_IOU_MATCH",
+        "SMALL_OBJECT"
+      ],
+      "supporting_evidence": [
+        "Machine matching classifies prediction 127 (bus, confidence 0.224, bbox [0.393, 0.890, 0.408, 0.921]) as a FALSE_POSITIVE: no same-class GT overlaps it at IoU >= 0.50.",
+        "The nearest bus GT (gt_index 12, bbox [0.394, 0.883, 0.403, 0.928]) overlaps the prediction with IoU 0.4582, i.e. ~0.042 below the 0.50 threshold, consistent with a near-miss localization on a small/distant object.",
+        "The predicted bbox is very small in frame terms (width ~0.015, height ~0.031 of the frame), indicating a small, distant larger vehicle consistent with the visually small apparent size of the target object in the lower-middle region.",
+        "The class-0 (bus) per-class tally for this image shows 0 TP vs 7 FP vs 1 FN, consistent with weak bus detection on small, distant objects in this scene."
+      ],
+      "uncertainty": [
+        "Whether the target region contains a genuine bus versus a large van or truck cannot be resolved at this image scale; the FALSE_POSITIVE label rests on the bus-class prediction and GT annotation.",
+        "Whether the ~0.042 IoU shortfall reflects a genuine localization offset, a class confusion between bus and another large vehicle, or simply the small object size cannot be determined from the image alone; BORDERLINE_IOU_MATCH is recorded as a plausible contributing factor, not a proven cause.",
+        "No duplicate detection or obvious background false positive on an empty region is visually evident at the target location; the box does land on a real vehicle-like shape, so FALSE_POSITIVE_BACKGROUND is assigned on the basis of the matching outcome rather than a visually empty background."
+      ]
+    },
+    {
+      "case_id": "VC-04",
+      "split": "test",
+      "image_path": "My-First-Project-4-detection\\test\\images\\frame_104_jpg.rf.86c46a0d54b4604cd216ac1dd759049d.jpg",
+      "visual_inspection_status": "COMPLETED",
+      "observed_facts": [
+        "Daytime outdoor multi-lane road scene with moderate-to-dense traffic",
+        "Many small vehicles (cars and two-wheelers) packed across the mid-ground and background",
+        "Objects appear small in apparent size relative to the frame; many are distant",
+        "Vehicles are tightly packed with little separation in places, consistent with crowding",
+        "Target region is in the upper-right portion of the frame (normalized x ~0.878-0.889, y ~0.162-0.186)",
+        "The target region contains a small, distant larger vehicle (truck-class) positioned above and behind a cluster of near-field vehicles",
+        "The target object is very small in apparent size and sits close to other closely spaced vehicles",
+        "Lighting is bright and even daylight with no strong shadows or glare degrading visibility"
+      ],
+      "machine_evidence_summary": {
+        "prediction_index": null,
+        "gt_index": 54,
+        "class_id": 4,
+        "class_name": "truck",
+        "confidence": null,
+        "iou_with_nearest_same_class_prediction": 0.3634,
+        "predicted_bbox": null,
+        "gt_bbox": [
+          0.8777345,
+          0.1621095,
+          0.8894535,
+          0.1863285
+        ],
+        "match_status": "FALSE_NEGATIVE (missed)",
+        "nearest_same_class_prediction": {
+          "prediction_index": 38,
+          "class_name": "truck",
+          "confidence": 0.3761073350906372,
+          "predicted_bbox": [
+            0.878057671,
+            0.153782392,
+            0.897411919,
+            0.192620707
+          ],
+          "iou_with_gt_54": 0.3634
+        },
+        "explanation": "No truck-class prediction overlapped GT 54 at IoU >= 0.50. The closest truck prediction (prediction_index 38, confidence 0.376) overlaps the same GT with IoU 0.3634, well below the 0.50 matching threshold, so the GT is counted as a false negative. Three truck predictions in this image did clear the threshold against other truck GTs (prediction_index 42 IoU 0.6377 with gt 55, prediction_index 113 IoU 0.6357 with gt 48, prediction_index 147 IoU 0.6842 with gt 31).",
+        "image_level": {
+          "prediction_count": 300,
+          "ground_truth_count": 77,
+          "tp_count": 50,
+          "fp_count": 250,
+          "fn_count": 27,
+          "per_class": {
+            "0": {
+              "TP": 0,
+              "FP": 7,
+              "FN": 1
+            },
+            "1": {
+              "TP": 21,
+              "FP": 106,
+              "FN": 18
+            },
+            "2": {
+              "TP": 26,
+              "FP": 126,
+              "FN": 7
+            },
+            "4": {
+              "TP": 3,
+              "FP": 11,
+              "FN": 1
+            }
+          }
+        }
+      },
+      "error_categories": [
+        "FALSE_NEGATIVE",
+        "SMALL_OBJECT",
+        "LOCALIZATION_ERROR"
+      ],
+      "supporting_evidence": [
+        "Machine matching classifies GT 54 (truck, bbox [0.878, 0.162, 0.889, 0.186]) as a FALSE_NEGATIVE: no same-class prediction overlaps it at IoU >= 0.50.",
+        "The nearest truck prediction (prediction_index 38, confidence 0.376, bbox [0.878, 0.154, 0.897, 0.193]) overlaps the GT with IoU 0.3634, i.e. ~0.137 below the 0.50 threshold, consistent with a substantial localization offset on a small/distant object.",
+        "The GT bbox is very small in frame terms (width ~0.012, height ~0.024 of the frame), indicating a small, distant larger vehicle consistent with the visually small apparent size of the target object in the upper-right region.",
+        "The class-4 (truck) per-class tally for this image shows 3 TP vs 11 FP vs 1 FN, consistent with weak truck detection on small, distant objects in this scene."
+      ],
+      "uncertainty": [
+        "Whether the target region contains a genuine truck versus a large van or bus cannot be resolved at this image scale; the FALSE_NEGATIVE label rests on the truck-class GT annotation.",
+        "Whether the ~0.137 IoU shortfall reflects a genuine localization offset or simply the small object size cannot be determined from the image alone; LOCALIZATION_ERROR is recorded as a plausible contributing factor, not a proven cause.",
+        "No duplicate detection, class confusion, or background false positive is visually evident in the target region; those categories are not assigned."
+      ]
+    },
+    {
+      "case_id": "VC-05",
+      "split": "test",
+      "image_path": "My-First-Project-4-detection\\test\\images\\frame_15_jpg.rf.2249587c24e46c4c1ccb8d9e05756f81.jpg",
+      "visual_inspection_status": "COMPLETED",
+      "observed_facts": [
+        "Daytime outdoor multi-lane road scene with moderate-to-dense traffic",
+        "Many small vehicles (cars and two-wheelers) packed across the mid-ground and background",
+        "Objects appear small in apparent size relative to the frame; many are distant",
+        "Vehicles are tightly packed with little separation in places, consistent with crowding",
+        "Target region is in the upper-right portion of the frame (normalized x ~0.875-0.905, y ~0.146-0.186)",
+        "The target region contains a small, distant larger vehicle (truck-class) positioned above and behind a cluster of near-field vehicles",
+        "The target object is small in apparent size and sits close to other closely spaced vehicles",
+        "Lighting is bright and even daylight with no strong shadows or glare degrading visibility"
+      ],
+      "machine_evidence_summary": {
+        "prediction_index": null,
+        "gt_index": 29,
+        "class_id": 4,
+        "class_name": "truck",
+        "confidence": null,
+        "iou_with_nearest_same_class_prediction": 0.4676,
+        "predicted_bbox": null,
+        "gt_bbox": [
+          0.8750005,
+          0.146484,
+          0.9046875,
+          0.186328
+        ],
+        "match_status": "FALSE_NEGATIVE (missed)",
+        "nearest_same_class_prediction": {
+          "prediction_index": 46,
+          "class_name": "truck",
+          "confidence": 0.35550275444984436,
+          "predicted_bbox": [
+            0.879592228,
+            0.154049706,
+            0.898551846,
+            0.192973304
+          ],
+          "iou_with_gt_29": 0.4676
+        },
+        "explanation": "No truck-class prediction overlapped GT 29 at IoU >= 0.50. The closest truck prediction (prediction_index 46, confidence 0.356) overlaps the same GT with IoU 0.4676, just below the 0.50 matching threshold, so the GT is counted as a false negative. Several lower-confidence truck predictions were emitted nearby but none reached the threshold. Three truck predictions in this image did clear the threshold against other truck GTs (prediction_index 95 IoU 0.7808 with gt 28, prediction_index 115 IoU 0.5006 with gt 27, prediction_index 236 IoU 0.6042 with gt 30).",
+        "image_level": {
+          "prediction_count": 300,
+          "ground_truth_count": 78,
+          "tp_count": 62,
+          "fp_count": 238,
+          "fn_count": 16,
+          "per_class": {
+            "0": {
+              "TP": 1,
+              "FP": 5,
+              "FN": 0
+            },
+            "1": {
+              "TP": 24,
+              "FP": 109,
+              "FN": 3
+            },
+            "2": {
+              "TP": 34,
+              "FP": 108,
+              "FN": 12
+            },
+            "4": {
+              "TP": 3,
+              "FP": 16,
+              "FN": 1
+            }
+          }
+        }
+      },
+      "error_categories": [
+        "FALSE_NEGATIVE",
+        "SMALL_OBJECT",
+        "LOCALIZATION_ERROR"
+      ],
+      "supporting_evidence": [
+        "Machine matching classifies GT 29 (truck, bbox [0.875, 0.146, 0.905, 0.186]) as a FALSE_NEGATIVE: no same-class prediction overlaps it at IoU >= 0.50.",
+        "The nearest truck prediction (prediction_index 46, confidence 0.356, bbox [0.880, 0.154, 0.899, 0.193]) overlaps the GT with IoU 0.4676, i.e. ~0.032 below the 0.50 threshold, consistent with a near-miss localization on a small/distant object.",
+        "The GT bbox is very small in frame terms (width ~0.030, height ~0.040 of the frame), indicating a small, distant larger vehicle consistent with the visually small apparent size of the target object in the upper-right region.",
+        "The class-4 (truck) per-class tally for this image shows 3 TP vs 16 FP vs 1 FN, consistent with weak truck detection on small, distant objects in this scene."
+      ],
+      "uncertainty": [
+        "Whether the target region contains a genuine truck versus a large van or bus cannot be resolved at this image scale; the FALSE_NEGATIVE label rests on the truck-class GT annotation.",
+        "Whether the ~0.032 IoU shortfall reflects a genuine localization offset or simply the small object size cannot be determined from the image alone; LOCALIZATION_ERROR is recorded as a plausible contributing factor, not a proven cause.",
+        "No duplicate detection, class confusion, or background false positive is visually evident in the target region; those categories are not assigned."
+      ]
+    },
+    {
+      "case_id": "VC-06",
+      "split": "test",
+      "image_path": "My-First-Project-4-detection\\test\\images\\frame_72_jpg.rf.ff2468668f7f03adea4416a41b701a47.jpg",
+      "visual_inspection_status": "COMPLETED",
+      "observed_facts": [
+        "Daytime outdoor multi-lane road scene with moderate-to-dense traffic",
+        "Many small vehicles (cars and two-wheelers) packed across the mid-ground and background",
+        "Objects appear small in apparent size relative to the frame; many are distant",
+        "Vehicles are tightly packed with little separation in places, consistent with crowding",
+        "Target region is in the upper-right portion of the frame (normalized x ~0.879-0.891, y ~0.164-0.196)",
+        "The target region contains a small, distant larger vehicle (truck-class) positioned above and behind a cluster of near-field vehicles",
+        "The target object is small in apparent size and sits close to other closely spaced vehicles",
+        "Lighting is bright and even daylight with no strong shadows or glare degrading visibility"
+      ],
+      "machine_evidence_summary": {
+        "prediction_index": null,
+        "gt_index": 33,
+        "class_id": 4,
+        "class_name": "truck",
+        "confidence": null,
+        "iou_with_nearest_same_class_prediction": 0.468,
+        "predicted_bbox": null,
+        "gt_bbox": [
+          0.878906,
+          0.1636725,
+          0.891406,
+          0.1957035
+        ],
+        "match_status": "FALSE_NEGATIVE (missed)",
+        "nearest_same_class_prediction": {
+          "prediction_index": 44,
+          "class_name": "truck",
+          "confidence": 0.36600497364997864,
+          "predicted_bbox": [
+            0.877680588,
+            0.15404501,
+            0.896841049,
+            0.192872477
+          ],
+          "iou_with_gt_33": 0.4683
+        },
+        "explanation": "No truck-class prediction overlapped GT 33 at IoU >= 0.50. The closest truck prediction (prediction_index 44, confidence 0.366) overlaps the same GT with IoU 0.468, just below the 0.50 matching threshold, so the GT is counted as a false negative. Several lower-confidence truck predictions were emitted nearby but none reached the threshold.",
+        "image_level": {
+          "prediction_count": 300,
+          "ground_truth_count": 83,
+          "tp_count": 60,
+          "fp_count": 240,
+          "fn_count": 23,
+          "per_class": {
+            "0": {
+              "TP": 1,
+              "FP": 3,
+              "FN": 0
+            },
+            "1": {
+              "TP": 28,
+              "FP": 104,
+              "FN": 2
+            },
+            "2": {
+              "TP": 29,
+              "FP": 120,
+              "FN": 19
+            },
+            "4": {
+              "TP": 2,
+              "FP": 13,
+              "FN": 2
+            }
+          }
+        }
+      },
+      "error_categories": [
+        "FALSE_NEGATIVE",
+        "SMALL_OBJECT",
+        "LOCALIZATION_ERROR"
+      ],
+      "supporting_evidence": [
+        "Machine matching classifies GT 33 (truck, bbox [0.879, 0.164, 0.891, 0.196]) as a FALSE_NEGATIVE: no same-class prediction overlaps it at IoU >= 0.50.",
+        "The nearest truck prediction (prediction_index 44, confidence 0.366, bbox [0.878, 0.154, 0.897, 0.193]) overlaps the GT with IoU 0.468, i.e. ~0.032 below the 0.50 threshold, consistent with a near-miss localization on a small/distant object.",
+        "The GT bbox is very small in frame terms (width ~0.012, height ~0.032 of the frame), indicating a small, distant larger vehicle consistent with the visually small apparent size of the target object in the upper-right region.",
+        "The class-4 (truck) per-class tally for this image shows 2 TP vs 13 FP vs 2 FN, consistent with weak truck detection on small, distant objects in this scene."
+      ],
+      "uncertainty": [
+        "Whether the target region contains a genuine truck versus a large van or bus cannot be resolved at this image scale; the FALSE_NEGATIVE label rests on the truck-class GT annotation.",
+        "Whether the ~0.032 IoU shortfall reflects a genuine localization offset or simply the small object size cannot be determined from the image alone; LOCALIZATION_ERROR is recorded as a plausible contributing factor, not a proven cause.",
+        "No duplicate detection, class confusion, or background false positive is visually evident in the target region; those categories are not assigned."
+      ]
+    }
+  ]
+}

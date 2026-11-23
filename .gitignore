@@ -1,5 +1,43 @@
+
+# Python environment
 .venv/
+venv/
 __pycache__/
-*.pyc
-*.pt
+*.py[cod]
+*.cache
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# YOLO training outputs
 runs/
+*.pt
+
+# Intermediate frames
+frames_filtered/
+frames_review/
+frames_temp/
+frames_to_annotate/
+frames_gt028/
+gt022_frames/
+gt028_frames/
+frames_check/
+frames_3/
+frames_300_399/
+frames_513_522/
+frames_518_522/
+frames_523_527/
+frames_526_530/
+audit_frames/
+
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
